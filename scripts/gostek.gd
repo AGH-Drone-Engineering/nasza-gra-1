@@ -7,8 +7,15 @@ const MOVEMENT_SPEED: float = 200.0
 var gostek_applied_velocity: Vector2 = Vector2.ZERO
 
 var gostek_target_position = null
-var gostek_loiter_position = null
-var gostek_immediate_target_position = null
+var gostek_new_target_timeout = 15
+
+var gostek_loiter_center = null
+var gostek_new_loiter_center_timeout = 5
+
+var gostek_loiter_target = null
+var gostek_new_loiter_target_timeout = 1
+
+var gostek_immediate_target = null
 
 
 func get_hotspot_nodes():
@@ -22,7 +29,7 @@ func get_random_hotspot():
 
 
 func set_target_to_random_hotspot():
-	set_nav_target(get_random_hotspot().global_position)
+	gostek_target_position = get_random_hotspot().global_position
 
 
 func actor_setup():
@@ -40,9 +47,42 @@ func _ready():
 	call_deferred("actor_setup")
 
 
+func _process(delta):
+	gostek_new_target_timeout -= delta
+	if gostek_new_target_timeout <= 0:
+		gostek_new_target_timeout = 15
+		set_target_to_random_hotspot()
+
+	gostek_new_loiter_center_timeout -= delta
+	if gostek_new_loiter_center_timeout <= 0:
+		gostek_new_loiter_center_timeout = 5
+		if gostek_loiter_center == null:
+			gostek_loiter_center = global_position
+			var loiter_offset = Vector2(randf() * 50.0 - 25.0, randf() * 50.0 - 25.0)
+			gostek_loiter_target = gostek_loiter_center + loiter_offset
+		else:
+			gostek_loiter_center = null
+			gostek_loiter_target = null
+
+	gostek_new_loiter_target_timeout -= delta
+	if gostek_new_loiter_target_timeout <= 0:
+		gostek_new_loiter_target_timeout = 1
+		if gostek_loiter_center != null:
+			var loiter_offset = Vector2(randf() * 50.0 - 25.0, randf() * 50.0 - 25.0)
+			gostek_loiter_target = gostek_loiter_center + loiter_offset
+
+	if gostek_loiter_target != null:
+		gostek_immediate_target = gostek_loiter_target
+	else:
+		gostek_immediate_target = gostek_target_position
+
+	if gostek_immediate_target != null:
+		set_nav_target(gostek_immediate_target)
+
+
 func _physics_process(_delta):
 	if nav_agent.is_navigation_finished():
-		set_target_to_random_hotspot()
+		pass
 	else:
 		var current_agent_position = global_position
 		var next_path_position = nav_agent.get_next_path_position()
