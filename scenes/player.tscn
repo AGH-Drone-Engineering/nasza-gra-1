@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtmxsfavh5hwg"]
+[gd_scene load_steps=10 format=3 uid="uid://dtmxsfavh5hwg"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dq0q8"]
 [ext_resource type="Texture2D" uid="uid://c402xjhv7564p" path="res://Subject.png" id="2_1brkw"]
 [ext_resource type="Resource" uid="uid://cxi3blfvsw5wx" path="res://inventory/playerInv.tres" id="2_78ts6"]
 [ext_resource type="PackedScene" uid="uid://ckn06so8vo663" path="res://inventory/inv_ui.tscn" id="4_k55ax"]
-[ext_resource type="PackedScene" path="res://scenes/book_ui.tscn" id="5_ee65w"]
+[ext_resource type="PackedScene" uid="uid://cdry4umpcwxyq" path="res://scenes/book_ui.tscn" id="5_ee65w"]
+[ext_resource type="PackedScene" uid="uid://dufk3d6damxnj" path="res://scenes/pots_ui.tscn" id="6_ib5jv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sdf7v"]
 animations = [{
@@ -61,6 +62,7 @@ offset_bottom = -55.0
 replication_config = SubResource("SceneReplicationConfig_6b8gs")
 
 [node name="MultiUI" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -185.0
@@ -80,6 +82,9 @@ offset_top = 34.0
 offset_right = 100.0
 offset_bottom = 65.0
 text = "Start Server"
+
+[node name="pots_UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_ib5jv")]
+player = NodePath("..")
 
 [connection signal="pressed" from="MultiUI/BecomeDupek" to="." method="_on_become_dupek_pressed"]
 [connection signal="pressed" from="MultiUI/StartServer" to="." method="_on_start_server_pressed"]

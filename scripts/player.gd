@@ -8,9 +8,9 @@ signal start_server_pressed
 
 @export var inv: Inv
 
-#var bow_equipped = false
-#var bow_cooldwon = true
-#var arrow = preload("res://scene/arrow.tscn")
+var green_pot = false
+var purple_pot = false
+var orange_pot = false 
 
 var mouse_loc_from_player = null
 
@@ -40,14 +40,6 @@ func _physics_process(delta):
 		velocity = direction * speed
 	
 	move_and_slide()
-	
-	#if Input.is_action_just_pressed("c"):
-	#	bow_equipped = !bow_equipped
-	
-	#var mouse_pos = get_global_mouse_position()
-	#$Marker2D.look_at(mouse_pos)
-	
-	#play_anim(direction)
 	
 	
 func play_anim(dir):

@@ -2,7 +2,6 @@ extends Panel
 
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/pot_display
 
-
 func _ready():
 	visible = false
 	

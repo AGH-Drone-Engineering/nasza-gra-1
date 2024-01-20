@@ -379,6 +379,15 @@ position = Vector2(1108, -124)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-2, 0)
 navigation_polygon = SubResource("NavigationPolygon_jv6h5")
+[node name="crafting_table" parent="." instance=ExtResource("4_60aq6")]
+z_index = 1
+position = Vector2(164, -40)
+
+[node name="NPC_to_give" parent="." instance=ExtResource("5_oymyf")]
+z_index = 1
+position = Vector2(173, 41)
+scale = Vector2(0.3, 0.3)
+pot_to_receive = ExtResource("10_vwdhs")
 
 [connection signal="set_dupek_authority" from="." to="Dupek" method="_on_world_set_dupek_authority"]
 [connection signal="become_dupek_pressed" from="player" to="." method="_on_player_become_dupek_pressed"]
