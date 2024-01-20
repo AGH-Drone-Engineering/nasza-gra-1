@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dppetjv3ed65"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_xfyih"]
+[ext_resource type="Texture2D" uid="uid://cmt3sagwwgwyu" path="res://art/pot_violet.png" id="2_5em3n"]
+
+[resource]
+script = ExtResource("1_xfyih")
+name = "purple pot"
+texture = ExtResource("2_5em3n")

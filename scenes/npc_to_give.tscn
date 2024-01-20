@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bok7rekild2um"]
+
+[ext_resource type="Script" path="res://scenes/npc_to_give.gd" id="1_gxoqd"]
+[ext_resource type="Texture2D" uid="uid://bii6ub4vk5cnp" path="res://Subject czarno bialy.png" id="1_q1331"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yx7se"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q1331")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jnppu"]
+radius = 90.0
+
+[node name="NPC_to_give" type="Node2D"]
+script = ExtResource("1_gxoqd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_yx7se")
+
+[node name="give_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="give_area"]
+shape = SubResource("CircleShape2D_jnppu")
+
+[connection signal="body_entered" from="give_area" to="." method="_on_give_area_body_entered"]
+[connection signal="body_exited" from="give_area" to="." method="_on_give_area_body_exited"]

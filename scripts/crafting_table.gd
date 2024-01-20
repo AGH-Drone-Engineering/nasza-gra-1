@@ -7,6 +7,10 @@ var is_potato_in_inventory = false
 var is_feather_in_inventory = false
 var is_water_in_inventory = false
 
+var green_given = false
+var purple_given = false
+var orange_given = false
+
 @export var orangePot: InvItem
 @export var purplePot: InvItem
 @export var greenPot: InvItem
@@ -35,33 +39,36 @@ func _process(delta):
 				
 				
 func craft():
-	if is_frog_in_inventory and is_water_in_inventory and is_feather_in_inventory:
+	if is_frog_in_inventory and is_water_in_inventory and is_feather_in_inventory and not orange_given:
 		player.collect(orangePot)
 		player.delete('water')
 		player.delete('feather')
 		player.delete('frog')
 		crafting_ui.update(orangePot)
+		orange_given = true
 		is_frog_in_inventory = false
 		is_water_in_inventory = false
 		is_feather_in_inventory = false
 		
-	if is_frog_in_inventory and is_potato_in_inventory and is_water_in_inventory:
+	if is_frog_in_inventory and is_potato_in_inventory and is_water_in_inventory and not green_given:
 		player.collect(greenPot)
 		player.delete('water')
 		player.delete('potato')
 		player.delete('frog')
 		crafting_ui.update(greenPot)
+		green_given = true
 		is_frog_in_inventory = false
 		is_water_in_inventory = false
 		is_potato_in_inventory = false
 		
 		
-	if is_potato_in_inventory and is_water_in_inventory and is_feather_in_inventory:
+	if is_potato_in_inventory and is_water_in_inventory and is_feather_in_inventory and not purple_given:
 		player.collect(purplePot)
 		player.delete('water')
 		player.delete('feather')
 		player.delete('potato')
 		crafting_ui.update(purplePot)
+		purple_given = true
 		is_potato_in_inventory = false
 		is_water_in_inventory = false
 		is_feather_in_inventory = false
@@ -71,7 +78,6 @@ func _on_crafting_area_body_entered(body):
 	if body.has_method("player"):
 		player_in_area = true
 		player = body
-		print('gracz wszedl')
 
 
 func _on_crafting_area_body_exited(body):
