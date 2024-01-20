@@ -1,10 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://c1pmdgecg6hwj"]
 
-[ext_resource type="Script" path="res://scenes/world.gd" id="1_7udsu"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_48m2j"]
 [ext_resource type="PackedScene" uid="uid://dtmxsfavh5hwg" path="res://scenes/player.tscn" id="1_tu4l0"]
-[ext_resource type="PackedScene" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
+[ext_resource type="PackedScene" uid="uid://hcoylgghssxh" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
 [ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://Art/Tileset_ground.png" id="3_83rnq"]
-[ext_resource type="PackedScene" path="res://scenes/gostek.tscn" id="3_e4i8b"]
+[ext_resource type="PackedScene" uid="uid://b6amem1uqqooi" path="res://scenes/gostek.tscn" id="3_e4i8b"]
+[ext_resource type="PackedScene" uid="uid://ca8jd0yql6ucc" path="res://scenes/dupek.tscn" id="6_e5gi4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lp82l"]
 resource_name = "atlas"
@@ -238,6 +239,7 @@ sources/0 = SubResource("TileSetAtlasSource_lp82l")
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_48m2j")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -282,8 +284,7 @@ position = Vector2(3, -433)
 [node name="HotSpot7" type="Marker2D" parent="." groups=["HotSpots"]]
 position = Vector2(-193, -465)
 
-[node name="Dupek" parent="." instance=ExtResource("5_24ua1")]
-position = Vector2(-34, -30)
+[node name="Dupek" parent="." instance=ExtResource("6_e5gi4")]
 
 [connection signal="set_dupek_authority" from="." to="Dupek" method="_on_world_set_dupek_authority"]
 [connection signal="become_dupek_pressed" from="player" to="." method="_on_player_become_dupek_pressed"]
