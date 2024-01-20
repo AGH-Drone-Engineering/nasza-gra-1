@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cncmgmoyifqxs"
-path="res://.godot/imported/pot_organge.png-8e9a3165aa332ab0c2ba1509cdcf8e33.ctex"
+uid="uid://cmt3sagwwgwyu"
+path="res://.godot/imported/pot_violet.png-524631d2e701fa6e104eefba9554e6af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/pot_organge.png"
-dest_files=["res://.godot/imported/pot_organge.png-8e9a3165aa332ab0c2ba1509cdcf8e33.ctex"]
+source_file="res://Art/pot_violet.png"
+dest_files=["res://.godot/imported/pot_violet.png-524631d2e701fa6e104eefba9554e6af.ctex"]
 
 [params]
 
