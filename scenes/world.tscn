@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dtmxsfavh5hwg" path="res://scenes/player.tscn" id="1_tu4l0"]
 [ext_resource type="PackedScene" uid="uid://hcoylgghssxh" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
-[ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://art/Tileset_ground.png" id="3_83rnq"]
-[ext_resource type="PackedScene" uid="uid://ctlf1dh5axxft" path="res://scenes/crafting_table.tscn" id="4_60aq6"]
+[ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://Art/Tileset_ground.png" id="3_83rnq"]
+[ext_resource type="PackedScene" uid="uid://b6amem1uqqooi" path="res://scenes/gostek.tscn" id="3_e4i8b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_55wgb"]
 texture = ExtResource("3_83rnq")
@@ -288,5 +288,5 @@ layer_1/tile_data = PackedInt32Array(524287, 131072, 6, 458751, 131072, 6, 39321
 layer_2/name = "3"
 layer_2/tile_data = PackedInt32Array()
 
-[node name="crafting_table" parent="." instance=ExtResource("4_60aq6")]
-position = Vector2(-112, -59)
+[node name="Gostek" parent="." instance=ExtResource("3_e4i8b")]
+position = Vector2(48, 20)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6amem1uqqooi"]
+
+[ext_resource type="Script" path="res://scripts/Gostek.gd" id="1_1tnek"]
+[ext_resource type="Texture2D" uid="uid://c402xjhv7564p" path="res://Subject.png" id="2_gmuoj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ggq36"]
+radius = 8.0
+
+[node name="Gostek" type="CharacterBody2D"]
+script = ExtResource("1_1tnek")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.007, 0.007)
+texture = ExtResource("2_gmuoj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ggq36")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+radius = 8.0
+
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
