@@ -1,13 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgt1iid2m3e8x"]
+[gd_scene load_steps=9 format=3 uid="uid://c1pmdgecg6hwj"]
 
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_48m2j"]
 [ext_resource type="PackedScene" uid="uid://dtmxsfavh5hwg" path="res://scenes/player.tscn" id="1_tu4l0"]
-[ext_resource type="PackedScene" uid="uid://hcoylgghssxh" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
-[ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://art/Tileset_ground.png" id="3_83rnq"]
-[ext_resource type="PackedScene" path="res://scenes/gostek.tscn" id="3_e4i8b"]
-[ext_resource type="PackedScene" uid="uid://ctlf1dh5axxft" path="res://scenes/crafting_table.tscn" id="4_60aq6"]
-[ext_resource type="PackedScene" uid="uid://bok7rekild2um" path="res://scenes/npc_to_give.tscn" id="5_oymyf"]
-[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="6_6cdin"]
-[ext_resource type="Texture2D" uid="uid://cncmgmoyifqxs" path="res://art/pot_organge.png" id="7_lq5lo"]
+[ext_resource type="Texture2D" uid="uid://dehypd6kxqdew" path="res://Art/Buildings1.png" id="2_3gvrq"]
+[ext_resource type="PackedScene" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
+[ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://Art/Tileset_ground.png" id="3_83rnq"]
+[ext_resource type="PackedScene" uid="uid://b6amem1uqqooi" path="res://scenes/gostek.tscn" id="3_e4i8b"]
+[ext_resource type="PackedScene" uid="uid://ca8jd0yql6ucc" path="res://scenes/dupek.tscn" id="6_e5gi4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lp82l"]
 resource_name = "atlas"
@@ -235,9 +234,26 @@ texture = ExtResource("3_83rnq")
 1:17/0/physics_layer_0/angular_velocity = 0.0
 1:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.91682, 12.6395, -2.82843, 15.9983, 2.82843, 16.3518, 2.91681, 12.1092)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_elsem"]
+texture = ExtResource("2_3gvrq")
+texture_region_size = Vector2i(4, 4)
+4:2/size_in_atlas = Vector2i(42, 23)
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+5:29/size_in_atlas = Vector2i(16, 18)
+5:29/0 = 0
+5:29/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:29/0/physics_layer_0/angular_velocity = 0.0
+35:27/size_in_atlas = Vector2i(11, 20)
+35:27/0 = 0
+35:27/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+35:27/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_juh7n"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lp82l")
+sources/1 = SubResource("TileSetAtlasSource_elsem")
 
 [sub_resource type="Resource" id="Resource_i881q"]
 script = ExtResource("6_6cdin")
@@ -246,6 +262,7 @@ texture = ExtResource("7_lq5lo")
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_48m2j")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -257,6 +274,8 @@ layer_1/name = "Nature"
 layer_1/y_sort_enabled = true
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(-1048647, 0, 17, -1310795, 0, 17, -1441859, 0, 17, -720982, 0, 17, -1376344, 0, 17, -1835102, 0, 17, -1835087, 0, 17, -589890, 0, 17, -393311, 0, 17, 655279, 0, 17, 196539, 0, 17, 458694, 0, 17, 1179575, 0, 17, 982980, 0, 17, 720823, 0, 17, 786338, 0, 17, -852022, 0, 17, -720969, 0, 17, -1638468, 0, 17, -1769557, 0, 17, -2359384, 0, 17, -2359356, 0, 17, -1966155, 0, 17, -1966144, 0, 17, -2359367, 0, 17, -1376315, 0, 17, -1048638, 0, 17, -196660, 0, 17, -262211, 0, 17, -393289, 0, 17, -393302, 0, 17, -1114204, 0, 17, -655452, 0, 17, 65443, 0, 17, 262059, 0, 17, 655282, 0, 17, 982958, 0, 17, 327604, 0, 17, 1048499, 0, 17, 786365, 0, 17, 1310654, 0, 17, 1376173, 0, 17, 1245107, 65536, 17, 1114043, 65536, 17, 917431, 65536, 17, 589761, 65536, 17, 458685, 65536, 17, 458677, 65536, 17, 458672, 65536, 17, 589739, 65536, 17, 1245090, 65536, 17, 982947, 65536, 17, 327587, 65536, 17, -393298, 65536, 17, -983128, 65536, 17, -1441885, 65536, 17, -1507411, 65536, 17, -1638476, 65536, 17, -1966170, 65536, 17, -2359388, 65536, 17, -2621526, 65536, 17, -2359376, 65536, 17, -2162773, 65536, 17, -2162763, 65536, 17, -2555979, 65536, 17, -2555970, 65536, 17, -2162755, 65536, 17, -1966151, 65536, 17, -1507408, 65536, 17, -1245255, 65536, 17, -720959, 65536, 17, -917571, 65536, 17, -327738, 65536, 17, -589881, 65536, 17, -1638463, 65536, 17, 1310662, 65536, 17, 524219, 131072, 16, 393155, 131072, 16, 720838, 131072, 16, 786374, 131072, 16, 851883, 131072, 16, 851889, 131072, 16, -458842, 131072, 16, -917589, 131072, 16, -1638489, 131072, 16, -2031697, 131072, 16, -2490450, 131072, 16, -2424908, 131072, 16, -1572935, 131072, 16, -1114178, 131072, 16, -655420, 131072, 16, -589884, 131072, 16, -393279, 131072, 16, -327722, 131072, 16, -852015, 131072, 16, -1572903, 131072, 16, -1703985, 131072, 16, -2097189, 131072, 16, -2293803, 131072, 16, -1835035, 131072, 16, -1441824, 131072, 16, -1245206, 131072, 16, -1114148, 131072, 16, -1245232, 131072, 16, -589858, 131072, 16, -2359319, 131072, 16, -2359327, 131072, 16, -720919, 131072, 16, 982985, 131072, 16, 131034, 131072, 16, -917535, 196608, 16, -786471, 196608, 16, -1441835, 196608, 16, -1638427, 196608, 16, -327701, 196608, 16, 655345, 196608, 16, 1048564, 196608, 16, 1179632, 196608, 16, 851960, 196608, 16, 1114107, 196608, 16, -524315, 196608, 15, -1179696, 196608, 15, -1245195, 196608, 15, -2031626, 196608, 15, -589840, 196608, 15, 786369, 196608, 15, -1114197, 196608, 15, -720989, 196608, 15, -1704007, 196608, 15, -1966164, 196608, 15, -2031670, 196608, 15, -2490413, 196608, 15, -2162717, 196608, 15, -2097167, 196608, 15, -2490376, 196608, 15, -1703956, 196608, 15, 1179639, 196608, 15, 917486, 196608, 15, 1245133, 196608, 15, 524204, 196608, 15, 589731, 196608, 15, 1179569, 196608, 15, -458743, 0, 17, -131054, 0, 17, -1114072, 0, 17, -2031548, 0, 17, -1245129, 0, 17, -2162639, 0, 17, -1245101, 0, 17, -196517, 0, 17, 917588, 0, 17, 1179715, 0, 17, 1376294, 0, 17, 1245202, 0, 17, 1245191, 0, 17, 851965, 0, 17, -1179678, 0, 17, -589866, 0, 17, -1638413, 0, 17, 589813, 0, 17, -786437, 0, 17, 458702, 0, 17, -1966126, 0, 17, -1376307, 0, 17, -2031649, 0, 17, -524249, 131072, 16, -1179586, 131072, 16, -1441748, 131072, 16, -1048547, 131072, 16, -1769410, 131072, 16, -1572787, 131072, 16, -982952, 131072, 16, -2031526, 131072, 16, 524320, 131072, 16, -1966044, 131072, 16, -2359265, 131072, 16, -1310702, 131072, 16, -1638381, 131072, 16, -1245174, 131072, 16, -65532, 131072, 17, -851964, 131072, 17, -851949, 131072, 17, 19, 131072, 17, 65571, 131072, 17, -327631, 131072, 17, -589764, 131072, 17, -1114041, 131072, 17, -720819, 131072, 17, -130995, 131072, 17, 262232, 131072, 17, 524372, 131072, 17, 524358, 131072, 17, 1048638, 131072, 17, 1048615, 131072, 17, 393268, 131072, 17, 1179652, 131072, 17, 1245182, 131072, 17, -196639, 131072, 17, -2359291, 131072, 17, -2293762, 131072, 17, -2359271, 131072, 17, 65493, 131072, 17)
+layer_2/name = "Buildings"
+layer_2/tile_data = PackedInt32Array(-2949108, 262145, 2, -393187, 327681, 29, -327717, 2293761, 27)
 
 [node name="player" parent="." instance=ExtResource("1_tu4l0")]
 z_index = 1
@@ -290,12 +309,8 @@ position = Vector2(3, -433)
 [node name="HotSpot7" type="Marker2D" parent="." groups=["HotSpots"]]
 position = Vector2(-193, -465)
 
-[node name="NPC_to_give" parent="." instance=ExtResource("5_oymyf")]
-z_index = 1
-position = Vector2(166, -70)
-scale = Vector2(0.2, 0.2)
-pot_to_receive = SubResource("Resource_i881q")
+[node name="Dupek" parent="." instance=ExtResource("6_e5gi4")]
 
-[node name="crafting_table" parent="." instance=ExtResource("4_60aq6")]
-z_index = 1
-position = Vector2(84, -64)
+[connection signal="set_dupek_authority" from="." to="Dupek" method="_on_world_set_dupek_authority"]
+[connection signal="become_dupek_pressed" from="player" to="." method="_on_player_become_dupek_pressed"]
+[connection signal="start_server_pressed" from="player" to="." method="_on_player_start_server_pressed"]
