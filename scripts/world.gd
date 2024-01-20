@@ -3,11 +3,34 @@ extends Node2D
 const REMOTE = "localhost"
 const PORT = 4433
 
+@export var gostek_scene: PackedScene
+@export var NUM_GOSTEKS: int
+
 signal set_dupek_authority(id)
+
+
+func get_hotspot_nodes():
+	return get_tree().get_nodes_in_group("HotSpots")
+
+
+func get_random_hotspot():
+	var hotspot_nodes = get_hotspot_nodes()
+	var random_hotspot_node = hotspot_nodes[randi() % hotspot_nodes.size()]
+	return random_hotspot_node
 
 
 func _ready():
 	multiplayer.server_relay = false
+	spawn_gosteks(NUM_GOSTEKS)
+
+
+func spawn_gosteks(n):
+	for i in range(n):
+		var gostek = gostek_scene.instantiate()
+		var spawn_hotspot =	get_random_hotspot()
+		var offset = Vector2(randf() * 100 - 50, randf() * 100 - 50)
+		gostek.position = spawn_hotspot.position + offset
+		add_child(gostek)
 
 
 func on_peer_connected(id):
