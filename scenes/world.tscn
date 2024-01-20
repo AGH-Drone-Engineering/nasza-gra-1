@@ -1,13 +1,13 @@
-[gd_scene load_steps=31 format=3 uid="uid://c1pmdgecg6hwj"]
+[gd_scene load_steps=32 format=3 uid="uid://c1pmdgecg6hwj"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_48m2j"]
 [ext_resource type="PackedScene" uid="uid://dtmxsfavh5hwg" path="res://scenes/player.tscn" id="1_tu4l0"]
-[ext_resource type="Texture2D" uid="uid://dehypd6kxqdew" path="res://art/Buildings1.png" id="2_3gvrq"]
-[ext_resource type="PackedScene" uid="uid://hcoylgghssxh" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
-[ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://art/Tileset_ground.png" id="3_83rnq"]
+[ext_resource type="Texture2D" uid="uid://dehypd6kxqdew" path="res://Art/Buildings1.png" id="2_3gvrq"]
+[ext_resource type="PackedScene" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
+[ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://Art/Tileset_ground.png" id="3_83rnq"]
 [ext_resource type="PackedScene" path="res://scenes/gostek.tscn" id="3_e4i8b"]
 [ext_resource type="PackedScene" path="res://scenes/dupek.tscn" id="6_e5gi4"]
-[ext_resource type="PackedScene" uid="uid://jbcsp6wej2l3" path="res://scenes/feather_place_to_collect.tscn" id="8_7kgnk"]
+[ext_resource type="PackedScene" path="res://scenes/feather_place_to_collect.tscn" id="8_7kgnk"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_evsvy"]
 source_geometry_group_name = &"navigation_polygon_source_group"
@@ -382,10 +382,12 @@ texture = ExtResource("3_83rnq")
 0:19/0 = 0
 0:19/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:19/0/physics_layer_0/angular_velocity = 0.0
+0:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, 4, -8, 4)
 0:19/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_eo063")
 1:19/0 = 0
 1:19/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:19/0/physics_layer_0/angular_velocity = 0.0
+1:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.6, 8, 1.6, 8, 1.6, -8, -1.6, -8)
 1:19/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_eo063")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_elsem"]
