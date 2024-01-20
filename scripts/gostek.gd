@@ -1,19 +1,19 @@
 extends CharacterBody2D
 
-const MOVEMENT_SPEED: float = 200.0
+var movement_speed: float = 150.0
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 var gostek_applied_velocity: Vector2 = Vector2.ZERO
 
 var gostek_target_position = null
-var gostek_new_target_timeout = 15
+var gostek_new_target_timeout = 15.0
 
 var gostek_loiter_center = null
-var gostek_new_loiter_center_timeout = 5
+var gostek_new_loiter_center_timeout = 5.0
 
 var gostek_loiter_target = null
-var gostek_new_loiter_target_timeout = 1
+var gostek_new_loiter_target_timeout = 1.0
 
 var gostek_immediate_target = null
 
@@ -42,6 +42,10 @@ func set_nav_target(target: Vector2):
 
 
 func _ready():
+	movement_speed += randf_range(-50.0, 50.0)
+	gostek_new_target_timeout += randf_range(-5.0, 5.0)
+	gostek_new_loiter_center_timeout += randf_range(-2.0, 2.0)
+	gostek_new_loiter_target_timeout += randf_range(-0.5, 0.5)
 	nav_agent.path_desired_distance = 4.0
 	nav_agent.target_desired_distance = 4.0
 	call_deferred("actor_setup")
@@ -50,12 +54,12 @@ func _ready():
 func _process(delta):
 	gostek_new_target_timeout -= delta
 	if gostek_new_target_timeout <= 0:
-		gostek_new_target_timeout = 15
+		gostek_new_target_timeout = 15 + randf_range(-5.0, 5.0)
 		set_target_to_random_hotspot()
 
 	gostek_new_loiter_center_timeout -= delta
 	if gostek_new_loiter_center_timeout <= 0:
-		gostek_new_loiter_center_timeout = 5
+		gostek_new_loiter_center_timeout = 5 + randf_range(-2.0, 2.0)
 		if gostek_loiter_center == null:
 			gostek_loiter_center = global_position
 			var loiter_offset = Vector2(randf() * 50.0 - 25.0, randf() * 50.0 - 25.0)
@@ -66,7 +70,7 @@ func _process(delta):
 
 	gostek_new_loiter_target_timeout -= delta
 	if gostek_new_loiter_target_timeout <= 0:
-		gostek_new_loiter_target_timeout = 1
+		gostek_new_loiter_target_timeout = 1 + randf_range(-0.5, 0.5)
 		if gostek_loiter_center != null:
 			var loiter_offset = Vector2(randf() * 50.0 - 25.0, randf() * 50.0 - 25.0)
 			gostek_loiter_target = gostek_loiter_center + loiter_offset
@@ -87,7 +91,7 @@ func _physics_process(_delta):
 		var current_agent_position = global_position
 		var next_path_position = nav_agent.get_next_path_position()
 
-		var new_velocity = current_agent_position.direction_to(next_path_position) * MOVEMENT_SPEED
+		var new_velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 		nav_agent.velocity = new_velocity
 
 	velocity = gostek_applied_velocity
