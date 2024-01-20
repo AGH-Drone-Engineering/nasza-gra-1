@@ -17,21 +17,25 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h60y"]
-radius = 74.027
+radius = 13.0384
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_dq0q8")
 inv = ExtResource("2_78ts6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
+position = Vector2(3.8147e-06, 3.8147e-06)
+scale = Vector2(0.01, 0.01)
 sprite_frames = SubResource("SpriteFrames_sdf7v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7h60y")
 
 [node name="inv_UI" parent="." instance=ExtResource("4_k55ax")]
-offset_left = -42.0
-offset_top = -82.0
-offset_right = 45.0
-offset_bottom = -39.0
+offset_left = -43.0
+offset_top = -55.0
+offset_right = 44.0
+offset_bottom = -12.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
