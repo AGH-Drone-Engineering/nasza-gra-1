@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-
 func _ready():
 	fall_from_tree()
 	

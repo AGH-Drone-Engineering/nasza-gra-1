@@ -1,12 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://c1pmdgecg6hwj"]
+[gd_scene load_steps=21 format=3 uid="uid://bgt1iid2m3e8x"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_48m2j"]
 [ext_resource type="PackedScene" uid="uid://dtmxsfavh5hwg" path="res://scenes/player.tscn" id="1_tu4l0"]
-[ext_resource type="Texture2D" uid="uid://dehypd6kxqdew" path="res://Art/Buildings1.png" id="2_3gvrq"]
+[ext_resource type="Texture2D" uid="uid://dehypd6kxqdew" path="res://art/Buildings1.png" id="2_3gvrq"]
 [ext_resource type="PackedScene" uid="uid://hcoylgghssxh" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
-[ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://Art/Tileset_ground.png" id="3_83rnq"]
-[ext_resource type="PackedScene" uid="uid://b6amem1uqqooi" path="res://scenes/gostek.tscn" id="3_e4i8b"]
-[ext_resource type="PackedScene" uid="uid://ca8jd0yql6ucc" path="res://scenes/dupek.tscn" id="6_e5gi4"]
+[ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://art/Tileset_ground.png" id="3_83rnq"]
+[ext_resource type="PackedScene" path="res://scenes/gostek.tscn" id="3_e4i8b"]
+[ext_resource type="PackedScene" path="res://scenes/dupek.tscn" id="6_e5gi4"]
+[ext_resource type="PackedScene" uid="uid://jbcsp6wej2l3" path="res://scenes/feather_place_to_collect.tscn" id="8_7kgnk"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_metqt"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -379,6 +380,9 @@ position = Vector2(1108, -124)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-2, 0)
 navigation_polygon = SubResource("NavigationPolygon_jv6h5")
+
+[node name="feather_place_to_collect" parent="." instance=ExtResource("8_7kgnk")]
+position = Vector2(-137, -70)
 
 [connection signal="set_dupek_authority" from="." to="Dupek" method="_on_world_set_dupek_authority"]
 [connection signal="become_dupek_pressed" from="player" to="." method="_on_player_become_dupek_pressed"]
