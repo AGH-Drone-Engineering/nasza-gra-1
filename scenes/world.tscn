@@ -255,11 +255,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lp82l")
 sources/1 = SubResource("TileSetAtlasSource_elsem")
 
-[sub_resource type="Resource" id="Resource_i881q"]
-script = ExtResource("6_6cdin")
-name = "orange pot"
-texture = ExtResource("7_lq5lo")
-
 [node name="world" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_48m2j")
