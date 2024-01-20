@@ -44,7 +44,6 @@ func drop_potato():
 	potato_instance.global_position = $Marker2D.global_position
 	get_parent().add_child(potato_instance)
 	player.collect(item)
-	print('player zebral')
 	await get_tree().create_timer(5).timeout
 	$growth_timer.start()
 	

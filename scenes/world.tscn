@@ -259,3 +259,24 @@ scale = Vector2(0.04, 0.04)
 
 [node name="Gostek" parent="." instance=ExtResource("3_e4i8b")]
 position = Vector2(48, 20)
+
+[node name="HotSpot1" type="Marker2D" parent="." groups=["HotSpots"]]
+position = Vector2(-193, -224)
+
+[node name="HotSpot2" type="Marker2D" parent="." groups=["HotSpots"]]
+position = Vector2(0, -224)
+
+[node name="HotSpot3" type="Marker2D" parent="." groups=["HotSpots"]]
+position = Vector2(259, -32)
+
+[node name="HotSpot4" type="Marker2D" parent="." groups=["HotSpots"]]
+position = Vector2(-192, 0)
+
+[node name="HotSpot5" type="Marker2D" parent="." groups=["HotSpots"]]
+position = Vector2(268, -225)
+
+[node name="HotSpot6" type="Marker2D" parent="." groups=["HotSpots"]]
+position = Vector2(3, -433)
+
+[node name="HotSpot7" type="Marker2D" parent="." groups=["HotSpots"]]
+position = Vector2(-193, -465)

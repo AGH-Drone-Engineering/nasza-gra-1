@@ -19,3 +19,14 @@ func insert(item: InvItem):
 			empty_slots[0].item = item
 			empty_slots[0].amount = 1
 	update.emit()
+	
+func delete(name: String):
+	for slot in slots:
+		if slot.item != null and slot.item.name == name:
+			if slot.amount > 1:
+				slot.amount -= 1
+			else:
+				slot.item = null
+				slot.amount = 0
+			update.emit()
+			return  # Stop searching after deleting the item
