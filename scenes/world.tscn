@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1pmdgecg6hwj"]
+[gd_scene load_steps=12 format=3 uid="uid://bgt1iid2m3e8x"]
 
 [ext_resource type="PackedScene" uid="uid://dtmxsfavh5hwg" path="res://scenes/player.tscn" id="1_tu4l0"]
-[ext_resource type="PackedScene" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
-[ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://Art/Tileset_ground.png" id="3_83rnq"]
+[ext_resource type="PackedScene" uid="uid://hcoylgghssxh" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
+[ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://art/Tileset_ground.png" id="3_83rnq"]
 [ext_resource type="PackedScene" path="res://scenes/gostek.tscn" id="3_e4i8b"]
+[ext_resource type="PackedScene" uid="uid://ctlf1dh5axxft" path="res://scenes/crafting_table.tscn" id="4_60aq6"]
+[ext_resource type="PackedScene" uid="uid://bok7rekild2um" path="res://scenes/npc_to_give.tscn" id="5_oymyf"]
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="6_6cdin"]
+[ext_resource type="Texture2D" uid="uid://cncmgmoyifqxs" path="res://art/pot_organge.png" id="7_lq5lo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lp82l"]
 resource_name = "atlas"
@@ -235,6 +239,11 @@ texture = ExtResource("3_83rnq")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lp82l")
 
+[sub_resource type="Resource" id="Resource_i881q"]
+script = ExtResource("6_6cdin")
+name = "orange pot"
+texture = ExtResource("7_lq5lo")
+
 [node name="world" type="Node2D"]
 y_sort_enabled = true
 
@@ -280,3 +289,13 @@ position = Vector2(3, -433)
 
 [node name="HotSpot7" type="Marker2D" parent="." groups=["HotSpots"]]
 position = Vector2(-193, -465)
+
+[node name="NPC_to_give" parent="." instance=ExtResource("5_oymyf")]
+z_index = 1
+position = Vector2(166, -70)
+scale = Vector2(0.2, 0.2)
+pot_to_receive = SubResource("Resource_i881q")
+
+[node name="crafting_table" parent="." instance=ExtResource("4_60aq6")]
+z_index = 1
+position = Vector2(84, -64)

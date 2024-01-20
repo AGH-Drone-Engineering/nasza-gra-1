@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dtmxsfavh5hwg"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dq0q8"]
-[ext_resource type="Texture2D" uid="uid://c402xjhv7564p" path="res://Subject.png" id="2_1brkw"]
+[ext_resource type="Texture2D" uid="uid://cm6hpk47wortw" path="res://Subject.png" id="2_1brkw"]
 [ext_resource type="Resource" uid="uid://cxi3blfvsw5wx" path="res://inventory/playerInv.tres" id="2_78ts6"]
 [ext_resource type="PackedScene" uid="uid://ckn06so8vo663" path="res://inventory/inv_ui.tscn" id="4_k55ax"]
 [ext_resource type="PackedScene" uid="uid://cdry4umpcwxyq" path="res://scenes/book_ui.tscn" id="5_ee65w"]
@@ -17,8 +17,9 @@ animations = [{
 "speed": 0.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7h60y"]
-radius = 8.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xr5js"]
+radius = 5.0
+height = 16.0
 
 [node name="player" type="CharacterBody2D"]
 motion_mode = 1
@@ -31,7 +32,9 @@ scale = Vector2(0.007, 0.007)
 sprite_frames = SubResource("SpriteFrames_sdf7v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_7h60y")
+position = Vector2(0, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xr5js")
 
 [node name="inv_UI" parent="." instance=ExtResource("4_k55ax")]
 offset_left = -43.0
@@ -43,6 +46,7 @@ offset_bottom = -12.0
 zoom = Vector2(3, 3)
 
 [node name="book_ui" parent="." instance=ExtResource("5_ee65w")]
+visible = false
 offset_left = -92.0
 offset_top = -55.0
 offset_right = -92.0
