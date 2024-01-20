@@ -5,7 +5,7 @@ var player_in_area = false
 
 var potato = preload("res://scenes/potato_collectible.tscn")
 
-#@export var item: InvItem
+@export var item: InvItem
 var player = null
 
 func _ready():
@@ -27,13 +27,11 @@ func _on_pickable_area_body_entered(body):
 	if body.has_method("player"):
 		player_in_area = true
 		player = body
-		print('gracz wszedł')
 
 
 func _on_pickable_area_body_exited(body):
 	if body.has_method("player"):
 		player_in_area = false
-		print('gracz wyszedł')
 		
 
 func _on_growth_timer_timeout():
@@ -45,7 +43,7 @@ func drop_potato():
 	var potato_instance = potato.instantiate()
 	potato_instance.global_position = $Marker2D.global_position
 	get_parent().add_child(potato_instance)
-	#player.collect(item)
+	player.collect(item)
 	print('player zebral')
 	await get_tree().create_timer(5).timeout
 	$growth_timer.start()

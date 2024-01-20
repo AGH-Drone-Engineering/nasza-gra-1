@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1pmdgecg6hwj"]
+[gd_scene load_steps=4 format=3 uid="uid://c1pmdgecg6hwj"]
 
 [ext_resource type="PackedScene" uid="uid://dtmxsfavh5hwg" path="res://scenes/player.tscn" id="1_tu4l0"]
 [ext_resource type="PackedScene" uid="uid://hcoylgghssxh" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
+
+[sub_resource type="TileSet" id="TileSet_cibhj"]
 
 [node name="world" type="Node2D"]
 
@@ -9,7 +11,19 @@
 scale = Vector2(0.2, 0.2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(8, 8)
 
 [node name="potato_plant" parent="." instance=ExtResource("2_q80ir")]
-position = Vector2(288, -140)
-scale = Vector2(0.3, 0.3)
+position = Vector2(45, -21)
+scale = Vector2(0.04, 0.04)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_cibhj")
+format = 2
+layer_0/name = "1"
+layer_0/z_index = -2
+layer_1/name = "2"
+layer_1/z_index = -1
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "3"
+layer_2/tile_data = PackedInt32Array()

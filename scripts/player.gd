@@ -3,7 +3,7 @@ extends CharacterBody2D
 var speed = 100
 var player_state
 
-#@export var inv: Inv
+@export var inv: Inv
 
 #var bow_equipped = false
 #var bow_cooldwon = true
@@ -18,8 +18,6 @@ func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 	var run = Input.is_action_pressed("shift")
 	
-#	if bow_equipped:
-#		speed = 80
 	if run:
 		speed = 150
 	else:
@@ -43,17 +41,6 @@ func _physics_process(delta):
 	
 	#var mouse_pos = get_global_mouse_position()
 	#$Marker2D.look_at(mouse_pos)
-	
-	#if Input.is_action_just_pressed("left_mouse") and bow_cooldwon and bow_equipped:
-	#	bow_cooldwon = false
-	#	var arrow_instacne = arrow.instantiate()
-	#	arrow_instacne.rotation = $Marker2D.rotation
-	#	arrow_instacne.global_position = $Marker2D.global_position
-	#	add_child(arrow_instacne)
-		
-	#	await get_tree().create_timer(0.4).timeout
-	#	bow_cooldwon = true
-		
 	
 	#play_anim(direction)
 	
@@ -85,6 +72,6 @@ func play_anim(dir):
 func player():
 	pass
 	
-#func collect(item):
-#	inv.insert(item)
+func collect(item):
+	inv.insert(item)
 	

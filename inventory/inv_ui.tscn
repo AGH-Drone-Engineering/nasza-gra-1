@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckn06so8vo663"]
+
+[ext_resource type="Texture2D" uid="uid://dg3ugdyqhj2ng" path="res://art/inventory_art/inventory-background.png" id="1_aheps"]
+[ext_resource type="Script" path="res://inventory/inv_ui.gd" id="1_u6f0m"]
+[ext_resource type="PackedScene" uid="uid://ftxoxtjlidcs" path="res://inventory/inv_ui_slot.tscn" id="3_3g4io"]
+
+[node name="inv_UI" type="Control"]
+custom_minimum_size = Vector2(87, 43)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 87.0
+offset_bottom = 43.0
+script = ExtResource("1_u6f0m")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 87.0
+offset_bottom = 43.0
+texture = ExtResource("1_aheps")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -17.5
+offset_right = 38.5
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="inv_ui_slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3g4io")]
+layout_mode = 2
+
+[node name="inv_ui_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3g4io")]
+layout_mode = 2
+
+[node name="inv_ui_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3g4io")]
+layout_mode = 2
+
+[node name="inv_ui_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3g4io")]
+layout_mode = 2
+
+[node name="inv_ui_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3g4io")]
+layout_mode = 2
+
+[node name="inv_ui_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3g4io")]
+layout_mode = 2
+
+[node name="inv_ui_slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3g4io")]
+layout_mode = 2
+
+[node name="inv_ui_slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3g4io")]
+layout_mode = 2

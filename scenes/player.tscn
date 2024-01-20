@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtmxsfavh5hwg"]
+[gd_scene load_steps=7 format=3 uid="uid://dtmxsfavh5hwg"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dq0q8"]
 [ext_resource type="Texture2D" uid="uid://cm6hpk47wortw" path="res://Subject.png" id="2_1brkw"]
+[ext_resource type="Resource" uid="uid://cxi3blfvsw5wx" path="res://inventory/playerInv.tres" id="2_78ts6"]
+[ext_resource type="PackedScene" uid="uid://ckn06so8vo663" path="res://inventory/inv_ui.tscn" id="4_k55ax"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sdf7v"]
 animations = [{
@@ -15,14 +17,21 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h60y"]
-radius = 307.467
+radius = 74.027
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_dq0q8")
+inv = ExtResource("2_78ts6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_sdf7v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7h60y")
+
+[node name="inv_UI" parent="." instance=ExtResource("4_k55ax")]
+offset_left = -42.0
+offset_top = -82.0
+offset_right = 45.0
+offset_bottom = -39.0
