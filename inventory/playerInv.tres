@@ -1,19 +1,26 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=11 format=3 uid="uid://cxi3blfvsw5wx"]
+[gd_resource type="Resource" script_class="Inv" load_steps=15 format=3 uid="uid://cxi3blfvsw5wx"]
 
+[ext_resource type="Resource" uid="uid://dks77qhymjrx2" path="res://inventory/items/potato.tres" id="1_2kwlt"]
 [ext_resource type="Script" path="res://inventory/inventory.gd" id="1_yg76f"]
+[ext_resource type="Resource" uid="uid://sw3rugf50d66" path="res://inventory/items/frog.tres" id="2_wwwna"]
 [ext_resource type="Script" path="res://inventory/inv_slot.gd" id="2_wxmjl"]
+[ext_resource type="Resource" uid="uid://k85h7n56crgl" path="res://inventory/items/water.tres" id="3_nnc8w"]
+[ext_resource type="Resource" uid="uid://dkoqanh2q80g8" path="res://inventory/items/feather.tres" id="4_ja1wy"]
 
 [sub_resource type="Resource" id="Resource_a3lur"]
 script = ExtResource("2_wxmjl")
-amount = 0
+item = ExtResource("2_wwwna")
+amount = 1
 
 [sub_resource type="Resource" id="Resource_jq6a1"]
 script = ExtResource("2_wxmjl")
-amount = 0
+item = ExtResource("1_2kwlt")
+amount = 1
 
 [sub_resource type="Resource" id="Resource_mrko8"]
 script = ExtResource("2_wxmjl")
-amount = 0
+item = ExtResource("3_nnc8w")
+amount = 1
 
 [sub_resource type="Resource" id="Resource_8noiv"]
 script = ExtResource("2_wxmjl")
@@ -21,7 +28,8 @@ amount = 0
 
 [sub_resource type="Resource" id="Resource_6ckbo"]
 script = ExtResource("2_wxmjl")
-amount = 0
+item = ExtResource("4_ja1wy")
+amount = 1
 
 [sub_resource type="Resource" id="Resource_3jvjd"]
 script = ExtResource("2_wxmjl")

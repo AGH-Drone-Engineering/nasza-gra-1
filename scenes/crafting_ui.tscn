@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct1kh76dp0abp"]
+
+[ext_resource type="Script" path="res://scripts/crafting_ui.gd" id="1_2qm7a"]
+[ext_resource type="Texture2D" uid="uid://de2maxfobk0fo" path="res://art/inventory_art/inventory-slot.png" id="2_aag74"]
+
+[node name="crafting_ui" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_2qm7a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_aag74")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="pot_display" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="show_timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="show_timer" to="." method="_on_show_timeout"]

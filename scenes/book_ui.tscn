@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdry4umpcwxyq"]
+[gd_scene load_steps=8 format=3 uid="uid://cdry4umpcwxyq"]
 
 [ext_resource type="Script" path="res://scenes/book_ui.gd" id="1_cjrbo"]
 [ext_resource type="Texture2D" uid="uid://dg3ugdyqhj2ng" path="res://art/inventory_art/inventory-background.png" id="2_qjucu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://s8uhlpbi5udl" path="res://art/feather.png" id="4_vudvg"]
 [ext_resource type="Texture2D" uid="uid://dldk5rgo3egt0" path="res://art/water.png" id="5_c1r7h"]
 [ext_resource type="Texture2D" uid="uid://olihwvyvoe6a" path="res://art/potato.png" id="6_w7jvm"]
+[ext_resource type="Texture2D" uid="uid://cncmgmoyifqxs" path="res://art/pot_organge.png" id="7_smbo7"]
 
 [node name="book_ui" type="Control"]
 z_index = 4
@@ -36,6 +37,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 3
@@ -111,3 +116,11 @@ layout_mode = 2
 position = Vector2(46, 80)
 scale = Vector2(1.75, 1.75)
 texture = ExtResource("4_vudvg")
+
+[node name="Panel10" type="Panel" parent="NinePatchRect/GridContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/GridContainer/Panel10"]
+position = Vector2(150, 9)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("7_smbo7")

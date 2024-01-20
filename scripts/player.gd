@@ -75,3 +75,6 @@ func player():
 func collect(item):
 	inv.insert(item)
 	
+func delete(name: String):
+	inv.delete(name)
+	
