@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu7hsiltlrilf"]
+
+[ext_resource type="Script" path="res://scripts/potato_collectible.gd" id="1_i6n6w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cau7e"]
+load_path = "res://.godot/imported/apple-icon2.png-fb72f3cdc8608f76882bbaf98bb7cc74.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_im553"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_cau7e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="Animation" id="Animation_hq81x"]
+resource_name = "jump from ground"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.785398]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vynln"]
+_data = {
+"jump from ground": SubResource("Animation_hq81x")
+}
+
+[node name="potato_collectible" type="StaticBody2D"]
+script = ExtResource("1_i6n6w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_im553")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vynln")
+}

@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1pmdgecg6hwj"]
+[gd_scene load_steps=3 format=3 uid="uid://c1pmdgecg6hwj"]
 
 [ext_resource type="PackedScene" uid="uid://dtmxsfavh5hwg" path="res://scenes/player.tscn" id="1_tu4l0"]
+[ext_resource type="PackedScene" uid="uid://hcoylgghssxh" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
 
 [node name="world" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_tu4l0")]
+scale = Vector2(0.2, 0.2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="potato_plant" parent="." instance=ExtResource("2_q80ir")]
+position = Vector2(288, -140)
+scale = Vector2(0.3, 0.3)

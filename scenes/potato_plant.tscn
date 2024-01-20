@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://hcoylgghssxh"]
+
+[ext_resource type="Script" path="res://scripts/potato_plant.gd" id="1_6ogkr"]
+[ext_resource type="Texture2D" uid="uid://cm6hpk47wortw" path="res://Subject.png" id="1_eo8la"]
+[ext_resource type="Texture2D" uid="uid://bii6ub4vk5cnp" path="res://Subject czarno bialy.png" id="3_kolrx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7wibb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kolrx")
+}],
+"loop": true,
+"name": &"no potatoes",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eo8la")
+}],
+"loop": true,
+"name": &"potatoes",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_04srn"]
+radius = 242.124
+
+[node name="potato_plant" type="Node2D"]
+script = ExtResource("1_6ogkr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_7wibb")
+animation = &"potatoes"
+
+[node name="pickable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
+shape = SubResource("CircleShape2D_04srn")
+
+[node name="growth_timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
+[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]
+[connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]
