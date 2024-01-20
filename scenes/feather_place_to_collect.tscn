@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://jbcsp6wej2l3"]
+
+[ext_resource type="Script" path="res://scripts/feather_place_to_collect.gd" id="1_30flb"]
+[ext_resource type="Texture2D" uid="uid://s8uhlpbi5udl" path="res://art/feather.png" id="1_g8o7h"]
+[ext_resource type="Resource" uid="uid://dkoqanh2q80g8" path="res://inventory/items/feather.tres" id="2_vagfq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pwcsv"]
+radius = 34.3657
+
+[node name="feather_place_to_collect" type="StaticBody2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_30flb")
+item = ExtResource("2_vagfq")
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_g8o7h")
+
+[node name="pickable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
+shape = SubResource("CircleShape2D_pwcsv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+
+[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
+[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
