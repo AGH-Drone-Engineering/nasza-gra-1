@@ -3,6 +3,9 @@ extends CharacterBody2D
 var speed = 100
 var player_state
 
+signal become_dupek_pressed
+signal start_server_pressed
+
 @export var inv: Inv
 
 #var bow_equipped = false
@@ -12,7 +15,9 @@ var player_state
 var mouse_loc_from_player = null
 
 func _physics_process(delta):
-	
+	if multiplayer.has_multiplayer_peer() and not multiplayer.is_server():
+		return
+
 	mouse_loc_from_player = get_global_mouse_position() - self.position
 	
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -77,4 +82,11 @@ func collect(item):
 	
 func delete(name: String):
 	inv.delete(name)
-	
+
+
+func _on_become_dupek_pressed():
+	emit_signal("become_dupek_pressed")
+
+
+func _on_start_server_pressed():
+	emit_signal("start_server_pressed")
