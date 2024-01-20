@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://oy6gt05ahfyh"]
+
+[ext_resource type="Script" path="res://Dualshock4Test.gd" id="1_yvr3j"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_yvr3j")

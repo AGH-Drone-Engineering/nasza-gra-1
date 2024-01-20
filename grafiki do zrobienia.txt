@@ -1,0 +1,21 @@
+podłoże:
+    trawa,
+    ścieżki ala brukowe,
+    błoto,
+
+woda
+
+roślinność:
+    drzewa,
+    trawa
+
+crafting table
+
+3 potki
+
+surowce:
+    żabka,
+    miniaturka wody
+    ziemniak
+    pióro
+    
