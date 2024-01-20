@@ -8,7 +8,7 @@ func _ready():
 	update_slots()
 	visible = false
 	
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("tab"):
 		show_inv_tab(true)
 	

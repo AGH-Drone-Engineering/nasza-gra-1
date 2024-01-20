@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byeeqag8oxl4e"
-path="res://.godot/imported/indicator_orange.png-dcf8860cf13c118560306ec12aa76df3.ctex"
+path="res://.godot/imported/indicator_orange.png-468ad7450ae172cada12a15b7c72bafa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/indicator_orange.png"
-dest_files=["res://.godot/imported/indicator_orange.png-dcf8860cf13c118560306ec12aa76df3.ctex"]
+source_file="res://Art/indicator_orange.png"
+dest_files=["res://.godot/imported/indicator_orange.png-468ad7450ae172cada12a15b7c72bafa.ctex"]
 
 [params]
 

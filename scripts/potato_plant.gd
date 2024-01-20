@@ -13,7 +13,7 @@ func _ready():
 	if state == "no potatoes":
 		$growth_timer.start()
 
-func _process(delta):
+func _process(_delta):
 	if state == "no potatoes":
 		$AnimatedSprite2D.play("no potatoes")
 	else: 
