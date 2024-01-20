@@ -6,7 +6,7 @@ extends Control
 @onready var purple_vis: Sprite2D = $NinePatchRect/Panel/purple
 @onready var orange_vis: Sprite2D = $NinePatchRect/Panel/orange
 
-func _process(delta):
+func _process(_delta):
 	if player.green_pot == true:
 		green_vis.visible = false
 		

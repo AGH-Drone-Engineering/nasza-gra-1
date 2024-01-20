@@ -14,7 +14,7 @@ var orange_pot = false
 
 var mouse_loc_from_player = null
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if multiplayer.has_multiplayer_peer() and not multiplayer.is_server():
 		return
 
@@ -72,8 +72,8 @@ func player():
 func collect(item):
 	inv.insert(item)
 	
-func delete(name: String):
-	inv.delete(name)
+func delete(xname: String):
+	inv.delete(xname)
 
 
 func _on_become_dupek_pressed():
