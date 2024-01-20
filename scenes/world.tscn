@@ -1,12 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://c1pmdgecg6hwj"]
+[gd_scene load_steps=20 format=3 uid="uid://c1pmdgecg6hwj"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_48m2j"]
 [ext_resource type="PackedScene" uid="uid://dtmxsfavh5hwg" path="res://scenes/player.tscn" id="1_tu4l0"]
-[ext_resource type="Texture2D" uid="uid://dehypd6kxqdew" path="res://Art/Buildings1.png" id="2_3gvrq"]
-[ext_resource type="PackedScene" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
-[ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://Art/Tileset_ground.png" id="3_83rnq"]
-[ext_resource type="PackedScene" path="res://scenes/gostek.tscn" id="3_e4i8b"]
-[ext_resource type="PackedScene" path="res://scenes/dupek.tscn" id="6_e5gi4"]
+[ext_resource type="Texture2D" uid="uid://cg75r4ged4tds" path="res://Art/Buildings1.png" id="2_3gvrq"]
+[ext_resource type="PackedScene" uid="uid://hcoylgghssxh" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
+[ext_resource type="Texture2D" uid="uid://dxxxjf2oup6on" path="res://Art/Tileset_ground.png" id="3_83rnq"]
+[ext_resource type="PackedScene" uid="uid://b6amem1uqqooi" path="res://scenes/gostek.tscn" id="3_e4i8b"]
+[ext_resource type="PackedScene" uid="uid://ca8jd0yql6ucc" path="res://scenes/dupek.tscn" id="6_e5gi4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_metqt"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -321,6 +321,13 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_lp82l")
 sources/1 = SubResource("TileSetAtlasSource_elsem")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jv6h5"]
+vertices = PackedVector2Array(-1457, 63, -1455, -55, -1397, -50, -1313, 23, -1297, 114, -693, 9, -648, 9, -652, 75, -686, 83, -769, 79, -806, 25, -1231, -45, -693, -40, -967, 17, -1158, 18, -1298, -52, -1347, 368, -1468, 361, -1464, 208, -1251, 169, -1244, 241, -1261, 358, -1340, -311, -1370, -401, -1365, -458, -1294, -472, -1222, -457, -1106, -380, -1101, -297, -1149, -264, -1311, -244, -1119, -441, -1201, -191, -1302, -186, -1294, -93, -1237, 310)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9, 10), PackedInt32Array(11, 12, 5, 10, 13), PackedInt32Array(11, 13, 14), PackedInt32Array(15, 11, 14, 3, 2), PackedInt32Array(16, 17, 18, 0, 4, 19, 20, 21), PackedInt32Array(22, 23, 24, 25, 26, 27, 28, 29, 30), PackedInt32Array(26, 31, 27), PackedInt32Array(30, 29, 32, 33), PackedInt32Array(33, 32, 11, 34), PackedInt32Array(15, 34, 11), PackedInt32Array(21, 20, 35)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-693, -40, -1231, -45, -1201, -191, -1149, -264, -1101, -297, -1106, -380, -1119, -441, -1222, -457, -1294, -472, -1365, -458, -1370, -401, -1340, -311, -1311, -244, -1302, -186, -1294, -93, -1298, -52, -1397, -50, -1455, -55, -1457, 63, -1464, 208, -1468, 361, -1347, 368, -1261, 358, -1237, 310, -1244, 241, -1251, 169, -1297, 114, -1313, 23, -1158, 18, -967, 17, -806, 25, -769, 79, -686, 83, -652, 75, -648, 9, -693, 9)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
 [node name="world" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_48m2j")
@@ -328,6 +335,7 @@ script = ExtResource("1_48m2j")
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_juh7n")
+navigation_visibility_mode = 1
 format = 2
 layer_0/name = "Ground"
 layer_0/z_index = -1
@@ -349,26 +357,29 @@ scale = Vector2(0.04, 0.04)
 position = Vector2(48, 20)
 
 [node name="HotSpot1" type="Marker2D" parent="." groups=["HotSpots"]]
-position = Vector2(-193, -224)
+position = Vector2(-1349, 279)
 
 [node name="HotSpot2" type="Marker2D" parent="." groups=["HotSpots"]]
-position = Vector2(0, -224)
+position = Vector2(-1241, -361)
 
 [node name="HotSpot3" type="Marker2D" parent="." groups=["HotSpots"]]
-position = Vector2(259, -32)
+position = Vector2(192, -615)
 
 [node name="HotSpot4" type="Marker2D" parent="." groups=["HotSpots"]]
-position = Vector2(-192, 0)
+position = Vector2(801, 120)
 
 [node name="HotSpot5" type="Marker2D" parent="." groups=["HotSpots"]]
-position = Vector2(268, -225)
+position = Vector2(-731, 37)
 
 [node name="HotSpot6" type="Marker2D" parent="." groups=["HotSpots"]]
-position = Vector2(3, -433)
-
-[node name="HotSpot7" type="Marker2D" parent="." groups=["HotSpots"]]
-position = Vector2(-193, -465)
+position = Vector2(1108, -124)
 
 [node name="Dupek" parent="." instance=ExtResource("6_e5gi4")]
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-2, 0)
+navigation_polygon = SubResource("NavigationPolygon_jv6h5")
+
 [connection signal="set_dupek_authority" from="." to="Dupek" method="_on_world_set_dupek_authority"]
+[connection signal="become_dupek_pressed" from="player" to="." method="_on_player_become_dupek_pressed"]
+[connection signal="start_server_pressed" from="player" to="." method="_on_player_start_server_pressed"]
