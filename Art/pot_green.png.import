@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqvys8ft4viaa"
-path="res://.godot/imported/Tileset_ground.png-2b750476d2dfe01b02f944ba7f067ba6.ctex"
+uid="uid://b3tprawkoqyo2"
+path="res://.godot/imported/pot_green.png-a6c0e0cb693a7dee54ce78c4b3cfbde4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Tileset_ground.png"
-dest_files=["res://.godot/imported/Tileset_ground.png-2b750476d2dfe01b02f944ba7f067ba6.ctex"]
+source_file="res://Art/pot_green.png"
+dest_files=["res://.godot/imported/pot_green.png-a6c0e0cb693a7dee54ce78c4b3cfbde4.ctex"]
 
 [params]
 
