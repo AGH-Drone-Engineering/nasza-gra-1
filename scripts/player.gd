@@ -40,6 +40,8 @@ func _physics_process(_delta):
 		velocity = direction * speed
 	
 	move_and_slide()
+	#play_anim(direction)
+	$AnimatedSprite2D.play("s-walk")
 	
 	
 func play_anim(dir):
