@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ca8jd0yql6ucc"]
+[gd_scene load_steps=6 format=3 uid="uid://ca8jd0yql6ucc"]
 
 [ext_resource type="Texture2D" uid="uid://c402xjhv7564p" path="res://Subject.png" id="1_3b5q7"]
 [ext_resource type="Script" path="res://scripts/dupek.gd" id="1_wt5fe"]
@@ -10,6 +10,9 @@ radius = 8.0
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0cud"]
+radius = 25.0
 
 [node name="Dupek" type="CharacterBody2D"]
 script = ExtResource("1_wt5fe")
@@ -28,3 +31,8 @@ texture = ExtResource("1_3b5q7")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_g0d3w")
+
+[node name="AttactArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttactArea"]
+shape = SubResource("CircleShape2D_l0cud")
