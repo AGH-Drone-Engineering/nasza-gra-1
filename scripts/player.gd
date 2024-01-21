@@ -11,12 +11,13 @@ signal start_server_pressed
 @onready var win_sprite: Sprite2D = $UI/WinSprite
 @onready var win_sprite_boat: Sprite2D = $UI/WinSpriteBoat
 @onready var lose_sprite: Sprite2D = $UI/LoseSprite
+@onready var dupek_node: Node2D = $"../Dupek"
 
 @export var inv: Inv
 
 var green_pot = false
 var purple_pot = false
-var orange_pot = false 
+var orange_pot = false
 
 
 func lock_controls():
@@ -36,6 +37,16 @@ func rpc_show_win():
 	else:
 		win_sprite.visible = true
 	lock_controls()
+
+
+func _process(delta):
+	if green_pot and purple_pot and orange_pot:
+		if boat_done:
+			win_sprite_boat.visible = true
+		else:
+			win_sprite.visible = true
+		lock_controls()
+		dupek_node.rpc_show_lose.rpc()
 
 
 func we_are_player():
