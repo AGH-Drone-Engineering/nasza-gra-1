@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ca8jd0yql6ucc"]
+[gd_scene load_steps=7 format=3 uid="uid://ca8jd0yql6ucc"]
 
 [ext_resource type="Texture2D" uid="uid://c402xjhv7564p" path="res://Subject.png" id="1_3b5q7"]
 [ext_resource type="Script" path="res://scripts/dupek.gd" id="1_wt5fe"]
+[ext_resource type="Texture2D" uid="uid://u0xrc0mthm41" path="res://Art/fire_particle.png" id="3_xdpsf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p76db"]
 radius = 8.0
@@ -36,3 +37,21 @@ replication_config = SubResource("SceneReplicationConfig_g0d3w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttactArea"]
 shape = SubResource("CircleShape2D_l0cud")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(3, 0)
+amount = 500
+explosiveness = 0.05
+lifetime_randomness = 0.1
+texture = ExtResource("3_xdpsf")
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector2(1, 2.08165e-12)
+spread = 7.0
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_min = 40.0
+initial_velocity_max = 60.0
+linear_accel_min = 40.0
+linear_accel_max = 60.0
+scale_amount_min = 0.02
+scale_amount_max = 0.05
