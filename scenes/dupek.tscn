@@ -11,6 +11,9 @@ radius = 8.0
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath("CPUParticles2D:emitting")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0cud"]
 radius = 25.0
@@ -40,6 +43,7 @@ shape = SubResource("CircleShape2D_l0cud")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(3, 0)
+emitting = false
 amount = 500
 explosiveness = 0.05
 lifetime_randomness = 0.1
