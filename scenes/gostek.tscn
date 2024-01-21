@@ -1,9 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://b6amem1uqqooi"]
+[gd_scene load_steps=19 format=3 uid="uid://dr4pirr6x03u8"]
 
 [ext_resource type="Script" path="res://scripts/Gostek.gd" id="1_1tnek"]
 [ext_resource type="Texture2D" uid="uid://b54qavbwwd3oq" path="res://henrietta1.png" id="2_52g0t"]
 [ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://Art/Characters_sprites.png" id="3_66qol"]
-[ext_resource type="Texture2D" uid="uid://bw7nuavb33val" path="res://Art/Cloth_sprites.png" id="4_14lw3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ggq36"]
 radius = 4.0
@@ -136,123 +135,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ajqg"]
-atlas = ExtResource("4_14lw3")
-region = Rect2(128, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ntqjl"]
-atlas = ExtResource("4_14lw3")
-region = Rect2(144, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tr0ql"]
-atlas = ExtResource("4_14lw3")
-region = Rect2(0, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hvj28"]
-atlas = ExtResource("4_14lw3")
-region = Rect2(16, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dldsw"]
-atlas = ExtResource("4_14lw3")
-region = Rect2(80, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8kovo"]
-atlas = ExtResource("4_14lw3")
-region = Rect2(96, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_08ir7"]
-atlas = ExtResource("4_14lw3")
-region = Rect2(192, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0c2bd"]
-atlas = ExtResource("4_14lw3")
-region = Rect2(208, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vg7fn"]
-atlas = ExtResource("4_14lw3")
-region = Rect2(32, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ohs2f"]
-atlas = ExtResource("4_14lw3")
-region = Rect2(48, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1yihr"]
-atlas = ExtResource("4_14lw3")
-region = Rect2(160, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_chko3"]
-atlas = ExtResource("4_14lw3")
-region = Rect2(176, 16, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jtjoc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6ajqg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ntqjl")
-}],
-"loop": true,
-"name": &"e-walk",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tr0ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hvj28")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dldsw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8kovo")
-}],
-"loop": true,
-"name": &"n-walk",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_08ir7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0c2bd")
-}],
-"loop": true,
-"name": &"ne-walk",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vg7fn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ohs2f")
-}],
-"loop": true,
-"name": &"s-walk",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1yihr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_chko3")
-}],
-"loop": true,
-"name": &"se-walk",
-"speed": 5.0
-}]
-
 [node name="Gostek" type="CharacterBody2D"]
 script = ExtResource("1_1tnek")
 
@@ -273,11 +155,6 @@ replication_config = SubResource("SceneReplicationConfig_g620v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_iiyos")
-animation = &"ne-walk"
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = SubResource("SpriteFrames_jtjoc")
 animation = &"ne-walk"
 
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
