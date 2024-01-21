@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://ca8jd0yql6ucc"]
 
 [ext_resource type="Script" path="res://scripts/dupek.gd" id="1_wt5fe"]
-[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://art/Characters_sprites.png" id="2_q04rl"]
-[ext_resource type="Texture2D" uid="uid://u0xrc0mthm41" path="res://art/fire_particle.png" id="3_xdpsf"]
+[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://Art/Characters_sprites.png" id="2_q04rl"]
+[ext_resource type="Texture2D" uid="uid://u0xrc0mthm41" path="res://Art/fire_particle.png" id="3_xdpsf"]
 [ext_resource type="Texture2D" uid="uid://b54qavbwwd3oq" path="res://henrietta1.png" id="4_w5ocv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p76db"]
@@ -132,6 +132,12 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath("CPUParticles2D:emitting")
 properties/1/spawn = true
 properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:animation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("AnimatedSprite2D:flip_h")
+properties/3/spawn = true
+properties/3/replication_mode = 1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0cud"]
 radius = 25.0
@@ -147,7 +153,7 @@ zoom = Vector2(3, 3)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p76db")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m342f")
 animation = &"e-walk"
 
