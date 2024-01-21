@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clsm20iwwxl1o"
-path="res://.godot/imported/Teleport_Pillar.png-650f91cf145cfa8ad0ef7ac3b5007156.ctex"
+path="res://.godot/imported/Teleport_Pillar.png-d8284a0565d202a1770f9a76bd8c3cb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Teleport_Pillar.png"
-dest_files=["res://.godot/imported/Teleport_Pillar.png-650f91cf145cfa8ad0ef7ac3b5007156.ctex"]
+source_file="res://art/Teleport_Pillar.png"
+dest_files=["res://.godot/imported/Teleport_Pillar.png-d8284a0565d202a1770f9a76bd8c3cb3.ctex"]
 
 [params]
 

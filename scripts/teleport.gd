@@ -6,7 +6,7 @@ extends Area2D
 
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("e"):
 		var bodies = get_overlapping_bodies()
 		for body in bodies:
 			if body.is_in_group("player"):

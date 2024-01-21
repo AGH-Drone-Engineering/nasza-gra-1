@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1081x5jj7vie"
-path="res://.godot/imported/frog.png-e725e3a132d71a9be08e2a5934ea77a9.ctex"
+path="res://.godot/imported/frog.png-406f9a56b37c49e41b1f44b867003a4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/frog.png"
-dest_files=["res://.godot/imported/frog.png-e725e3a132d71a9be08e2a5934ea77a9.ctex"]
+source_file="res://art/frog.png"
+dest_files=["res://.godot/imported/frog.png-406f9a56b37c49e41b1f44b867003a4a.ctex"]
 
 [params]
 
