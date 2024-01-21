@@ -102,11 +102,6 @@ animations = [{
 "name": &"ne-walk",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s8g6k")
@@ -138,10 +133,10 @@ height = 16.0
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
-properties/1/path = NodePath("AnimatedSprite2D:animation")
+properties/1/path = NodePath("UI/LoseSprite:visible")
 properties/1/spawn = true
 properties/1/replication_mode = 1
-properties/2/path = NodePath("AnimatedSprite2D:flip_h")
+properties/2/path = NodePath("UI/WinSprite:visible")
 properties/2/spawn = true
 properties/2/replication_mode = 1
 
