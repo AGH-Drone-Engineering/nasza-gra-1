@@ -9,7 +9,9 @@ var player_state
 @onready var player_node: Node2D = get_tree().get_nodes_in_group("player")[0]
 var misses_left = 5
 
-signal dupek_game_over(result)
+@rpc("any_peer", "call_remote", "reliable")
+func rpc_show_lose():
+	lose_sprite.visible = true
 
 func we_are_dupek():
 	return multiplayer.has_multiplayer_peer() and not multiplayer.is_server()
@@ -24,13 +26,13 @@ func _input(event):
 				print("Killed player")
 				particles.emitting = true
 				win_sprite.visible = true
-				emit_signal("dupek_game_over", "win")
+				player_node.rpc_show_lose.rpc()
 				return
 		print("Missed player")
 		if misses_left == 0:
 			print("Dupek lost")
 			lose_sprite.visible = true
-			emit_signal("dupek_game_over", "lose")
+			player_node.rpc_show_win.rpc()
 		else:
 			misses_left -= 1
 

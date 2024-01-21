@@ -16,6 +16,16 @@ var purple_pot = false
 var orange_pot = false 
 
 
+@rpc("any_peer", "call_remote", "reliable")
+func rpc_show_win():
+	win_sprite.visible = true
+
+
+@rpc("any_peer", "call_remote", "reliable")
+func rpc_show_lose():
+	lose_sprite.visible = true
+
+
 func we_are_player():
 	return not multiplayer.has_multiplayer_peer() or multiplayer.is_server()
 
@@ -95,10 +105,3 @@ func _on_become_dupek_pressed():
 
 func _on_start_server_pressed():
 	emit_signal("start_server_pressed")
-
-
-func _on_dupek_dupek_game_over(result):
-	if result == "win":
-		win_sprite.visible = true
-	else:
-		lose_sprite.visible = true
