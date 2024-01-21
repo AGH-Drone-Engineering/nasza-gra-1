@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dr4pirr6x03u8" path="res://scenes/gostek.tscn" id="3_e4i8b"]
 [ext_resource type="PackedScene" uid="uid://ctlf1dh5axxft" path="res://scenes/crafting_table.tscn" id="4_60aq6"]
 [ext_resource type="Texture2D" uid="uid://bryq5vrwdurv7" path="res://Art/indoor_tileset.png" id="5_cqm2u"]
-[ext_resource type="PackedScene" uid="uid://dl7u4pmdaej22" path="res://scenes/npc_to_give.tscn" id="5_oymyf"]
+[ext_resource type="PackedScene" uid="uid://bok7rekild2um" path="res://scenes/npc_to_give.tscn" id="5_oymyf"]
 [ext_resource type="PackedScene" uid="uid://ca8jd0yql6ucc" path="res://scenes/dupek.tscn" id="6_e5gi4"]
 [ext_resource type="PackedScene" path="res://scenes/feather_place_to_collect.tscn" id="8_7kgnk"]
 [ext_resource type="PackedScene" path="res://scenes/frog_place_to_collect.tscn" id="9_ac4pm"]
@@ -830,7 +830,6 @@ color = Color(0.929412, 0.784314, 0.815686, 1)
 
 [node name="NPC_to_give" parent="." instance=ExtResource("5_oymyf")]
 position = Vector2(167, -77)
-scale = Vector2(0.3, 0.3)
 pot_to_receive = ExtResource("10_vwdhs")
 
 [node name="frog_place_to_collect4" parent="." instance=ExtResource("9_ac4pm")]
