@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdry4umpcwxyq"]
+[gd_scene load_steps=11 format=3 uid="uid://cdry4umpcwxyq"]
 
 [ext_resource type="Script" path="res://scenes/book_ui.gd" id="1_cjrbo"]
 [ext_resource type="Texture2D" uid="uid://dg3ugdyqhj2ng" path="res://art/inventory_art/inventory-background.png" id="2_qjucu"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dldk5rgo3egt0" path="res://art/water.png" id="5_c1r7h"]
 [ext_resource type="Texture2D" uid="uid://olihwvyvoe6a" path="res://art/potato.png" id="6_w7jvm"]
 [ext_resource type="Texture2D" uid="uid://cncmgmoyifqxs" path="res://art/pot_organge.png" id="7_smbo7"]
+[ext_resource type="Texture2D" uid="uid://b3tprawkoqyo2" path="res://art/pot_green.png" id="8_wsamf"]
+[ext_resource type="Texture2D" uid="uid://cmt3sagwwgwyu" path="res://art/pot_violet.png" id="9_sl5l0"]
+[ext_resource type="Texture2D" uid="uid://bg652agkifam6" path="res://art/arrow_right.png" id="10_4g472"]
 
 [node name="book_ui" type="Control"]
 z_index = 4
@@ -124,3 +127,43 @@ layout_mode = 2
 position = Vector2(150, 9)
 scale = Vector2(1.75, 1.75)
 texture = ExtResource("7_smbo7")
+
+[node name="Panel11" type="Panel" parent="NinePatchRect/GridContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/GridContainer/Panel11"]
+position = Vector2(146, 42)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("8_wsamf")
+
+[node name="Panel12" type="Panel" parent="NinePatchRect/GridContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/GridContainer/Panel12"]
+position = Vector2(142, 75)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("9_sl5l0")
+
+[node name="Panel13" type="Panel" parent="NinePatchRect/GridContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/GridContainer/Panel13"]
+position = Vector2(114, 73)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("10_4g472")
+
+[node name="Panel14" type="Panel" parent="NinePatchRect/GridContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/GridContainer/Panel14"]
+position = Vector2(110, 5)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("10_4g472")
+
+[node name="Panel15" type="Panel" parent="NinePatchRect/GridContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/GridContainer/Panel15"]
+position = Vector2(106, 38)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("10_4g472")
