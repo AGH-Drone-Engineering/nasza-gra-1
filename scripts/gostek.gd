@@ -19,6 +19,10 @@ var gostek_immediate_target = null
 var gostek_set_immediate_target_timeout = 0.5
 
 
+func we_are_player():
+	return not multiplayer.has_multiplayer_peer() or multiplayer.is_server()
+
+
 func get_hotspot_nodes():
 	return get_tree().get_nodes_in_group("HotSpots")
 
@@ -43,6 +47,8 @@ func set_nav_target(target: Vector2):
 
 
 func _ready():
+	if not we_are_player():
+		return
 	movement_speed += randf_range(-20.0, 20.0)
 	gostek_new_target_timeout += randf_range(-5.0, 5.0)
 	gostek_new_loiter_center_timeout += randf_range(-2.0, 2.0)
@@ -53,6 +59,9 @@ func _ready():
 
 
 func _process(delta):
+	if not we_are_player():
+		return
+
 	gostek_new_target_timeout -= delta
 	if gostek_new_target_timeout <= 0:
 		gostek_new_target_timeout = 15 + randf_range(-5.0, 5.0)
@@ -89,6 +98,9 @@ func _process(delta):
 
 
 func _physics_process(_delta):
+	if not we_are_player():
+		return
+
 	if nav_agent.is_navigation_finished():
 		pass
 	else:
