@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dq0q8"]
 [ext_resource type="Resource" uid="uid://cxi3blfvsw5wx" path="res://inventory/playerInv.tres" id="2_78ts6"]
-[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://art/Characters_sprites.png" id="3_8wnus"]
+[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://Art/Characters_sprites.png" id="3_8wnus"]
 [ext_resource type="PackedScene" uid="uid://ckn06so8vo663" path="res://inventory/inv_ui.tscn" id="4_k55ax"]
-[ext_resource type="PackedScene" uid="uid://cdry4umpcwxyq" path="res://scenes/book_ui.tscn" id="5_ee65w"]
-[ext_resource type="PackedScene" uid="uid://dufk3d6damxnj" path="res://scenes/pots_ui.tscn" id="6_ib5jv"]
+[ext_resource type="PackedScene" path="res://scenes/book_ui.tscn" id="5_ee65w"]
+[ext_resource type="PackedScene" path="res://scenes/pots_ui.tscn" id="6_ib5jv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8umy"]
 atlas = ExtResource("3_8wnus")
@@ -73,7 +73,6 @@ offset_bottom = -55.0
 replication_config = SubResource("SceneReplicationConfig_6b8gs")
 
 [node name="MultiUI" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -185.0
