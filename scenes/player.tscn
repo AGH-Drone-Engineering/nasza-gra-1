@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dq0q8"]
 [ext_resource type="Resource" uid="uid://cxi3blfvsw5wx" path="res://inventory/playerInv.tres" id="2_78ts6"]
-[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://art/Characters_sprites.png" id="3_8wnus"]
+[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://Art/Characters_sprites.png" id="3_8wnus"]
 [ext_resource type="PackedScene" uid="uid://ckn06so8vo663" path="res://inventory/inv_ui.tscn" id="4_k55ax"]
-[ext_resource type="PackedScene" uid="uid://cdry4umpcwxyq" path="res://scenes/book_ui.tscn" id="5_ee65w"]
-[ext_resource type="PackedScene" uid="uid://dufk3d6damxnj" path="res://scenes/pots_ui.tscn" id="6_ib5jv"]
+[ext_resource type="PackedScene" path="res://scenes/book_ui.tscn" id="5_ee65w"]
+[ext_resource type="PackedScene" path="res://scenes/pots_ui.tscn" id="6_ib5jv"]
 [ext_resource type="Texture2D" uid="uid://b54qavbwwd3oq" path="res://henrietta1.png" id="7_f4ign"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qeauw"]
@@ -187,8 +187,10 @@ offset_bottom = -17.0
 [node name="ColorRect" type="ColorRect" parent="MultiUI"]
 z_index = 4
 layout_mode = 0
-offset_right = 287.0
-offset_bottom = 162.0
+offset_left = -128.0
+offset_top = -113.0
+offset_right = 507.0
+offset_bottom = 297.0
 color = Color(0.533333, 0.694118, 0.443137, 1)
 
 [node name="BecomeDupek" type="Button" parent="MultiUI"]
