@@ -1,23 +1,25 @@
-[gd_scene load_steps=45 format=3 uid="uid://c1pmdgecg6hwj"]
+[gd_scene load_steps=47 format=3 uid="uid://bgt1iid2m3e8x"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_48m2j"]
 [ext_resource type="PackedScene" uid="uid://dtmxsfavh5hwg" path="res://scenes/player.tscn" id="1_tu4l0"]
-[ext_resource type="Texture2D" uid="uid://dehypd6kxqdew" path="res://Art/Buildings1.png" id="2_3gvrq"]
+[ext_resource type="Texture2D" uid="uid://dehypd6kxqdew" path="res://art/Buildings1.png" id="2_3gvrq"]
 [ext_resource type="PackedScene" uid="uid://hcoylgghssxh" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
-[ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://Art/Tileset_ground.png" id="3_83rnq"]
-[ext_resource type="PackedScene" uid="uid://dr4pirr6x03u8" path="res://scenes/gostek.tscn" id="3_e4i8b"]
+[ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://art/Tileset_ground.png" id="3_83rnq"]
+[ext_resource type="PackedScene" uid="uid://bdm2so53bvqk3" path="res://scenes/gostek.tscn" id="3_e4i8b"]
 [ext_resource type="PackedScene" uid="uid://ctlf1dh5axxft" path="res://scenes/crafting_table.tscn" id="4_60aq6"]
-[ext_resource type="Texture2D" uid="uid://bryq5vrwdurv7" path="res://Art/indoor_tileset.png" id="5_cqm2u"]
-[ext_resource type="PackedScene" path="res://scenes/npc_to_give.tscn" id="5_oymyf"]
+[ext_resource type="Texture2D" uid="uid://bryq5vrwdurv7" path="res://art/indoor_tileset.png" id="5_cqm2u"]
+[ext_resource type="PackedScene" uid="uid://bok7rekild2um" path="res://scenes/npc_to_give.tscn" id="5_oymyf"]
 [ext_resource type="PackedScene" uid="uid://ca8jd0yql6ucc" path="res://scenes/dupek.tscn" id="6_e5gi4"]
-[ext_resource type="PackedScene" path="res://scenes/feather_place_to_collect.tscn" id="8_7kgnk"]
-[ext_resource type="PackedScene" path="res://scenes/frog_place_to_collect.tscn" id="9_ac4pm"]
+[ext_resource type="PackedScene" uid="uid://jbcsp6wej2l3" path="res://scenes/feather_place_to_collect.tscn" id="8_7kgnk"]
+[ext_resource type="PackedScene" uid="uid://bmifeilnxeubr" path="res://scenes/frog_place_to_collect.tscn" id="9_ac4pm"]
 [ext_resource type="PackedScene" uid="uid://dfthneb1g3lto" path="res://scenes/teleport.tscn" id="9_wn88t"]
-[ext_resource type="PackedScene" uid="uid://dnxa5no36mjsr" path="res://scenes/water_collectible.tscn" id="10_6k4rs"]
-[ext_resource type="Resource" path="res://inventory/items/orange_pot.tres" id="10_vwdhs"]
-[ext_resource type="PackedScene" path="res://scenes/boat.tscn" id="15_0dsjb"]
-[ext_resource type="Texture2D" uid="uid://biwtlw1ukfypy" path="res://Art/raindrop.png" id="17_03q11"]
+[ext_resource type="PackedScene" uid="uid://c4uqaue37gmuf" path="res://scenes/water_collectible.tscn" id="10_6k4rs"]
+[ext_resource type="Resource" uid="uid://chj315eyqe146" path="res://inventory/items/orange_pot.tres" id="10_vwdhs"]
+[ext_resource type="PackedScene" uid="uid://cpgb7qs13ee47" path="res://scenes/boat.tscn" id="15_0dsjb"]
+[ext_resource type="Texture2D" uid="uid://biwtlw1ukfypy" path="res://art/raindrop.png" id="17_03q11"]
 [ext_resource type="AudioStream" uid="uid://dnciira16v5nm" path="res://Sounds/music_background.mp3" id="18_cepm1"]
+[ext_resource type="Resource" uid="uid://dppetjv3ed65" path="res://inventory/items/purple_pot.tres" id="19_5qq4d"]
+[ext_resource type="Resource" uid="uid://d1q10jhktg7mk" path="res://inventory/items/green_pot.tres" id="20_3g35y"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_evsvy"]
 source_geometry_group_name = &"navigation_polygon_source_group"
@@ -505,13 +507,6 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 2.08165e-12)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_jkkxg"]
-vertices = PackedVector2Array(297, -178, 293, 14, 89, 17, 91, -179)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(91, -179, 297, -178, 293, 14, 89, 17)])
-source_geometry_group_name = &"navigation_polygon_source_group"
-agent_radius = 0.0
-
 [node name="world" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_48m2j")
@@ -843,6 +838,19 @@ position = Vector2(-1330, 274)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_cepm1")
 autoplay = true
+
+[node name="potato_plant2" parent="." instance=ExtResource("2_q80ir")]
+position = Vector2(1000, 300)
+
+[node name="NPC_to_give2" parent="." instance=ExtResource("5_oymyf")]
+modulate = Color(0.870588, 0.0588235, 0.67451, 1)
+position = Vector2(800, 100)
+pot_to_receive = ExtResource("19_5qq4d")
+
+[node name="NPC_to_give3" parent="." instance=ExtResource("5_oymyf")]
+modulate = Color(0.0235294, 0.972549, 0.164706, 1)
+position = Vector2(-500, -10)
+pot_to_receive = ExtResource("20_3g35y")
 
 [connection signal="set_dupek_authority" from="." to="Dupek" method="_on_world_set_dupek_authority"]
 [connection signal="become_dupek_pressed" from="player" to="." method="_on_player_become_dupek_pressed"]
