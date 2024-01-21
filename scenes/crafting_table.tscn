@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://scripts/crafting_table.gd" id="1_26yhg"]
 [ext_resource type="Script" path="res://inventory/inventory_item.gd" id="2_w0248"]
-[ext_resource type="Texture2D" uid="uid://cncmgmoyifqxs" path="res://art/pot_organge.png" id="3_mt76g"]
-[ext_resource type="Texture2D" uid="uid://cmt3sagwwgwyu" path="res://art/pot_violet.png" id="4_esbwi"]
-[ext_resource type="Texture2D" uid="uid://b3tprawkoqyo2" path="res://art/pot_green.png" id="5_bcnld"]
-[ext_resource type="PackedScene" uid="uid://ct1kh76dp0abp" path="res://scenes/crafting_ui.tscn" id="5_cyu27"]
-[ext_resource type="Texture2D" uid="uid://coo7rd3b11g0r" path="res://art/Crafting_Table.png" id="6_qxkah"]
+[ext_resource type="Texture2D" uid="uid://cncmgmoyifqxs" path="res://Art/pot_organge.png" id="3_mt76g"]
+[ext_resource type="Texture2D" uid="uid://cmt3sagwwgwyu" path="res://Art/pot_violet.png" id="4_esbwi"]
+[ext_resource type="Texture2D" uid="uid://b3tprawkoqyo2" path="res://Art/pot_green.png" id="5_bcnld"]
+[ext_resource type="PackedScene" path="res://scenes/crafting_ui.tscn" id="5_cyu27"]
+[ext_resource type="Texture2D" uid="uid://coo7rd3b11g0r" path="res://Art/Crafting_Table.png" id="6_qxkah"]
 
 [sub_resource type="Resource" id="Resource_e0655"]
 script = ExtResource("2_w0248")
