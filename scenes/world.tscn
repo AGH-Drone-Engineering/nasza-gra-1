@@ -590,9 +590,10 @@ position = Vector2(-348, 158)
 
 [node name="player" parent="." instance=ExtResource("1_tu4l0")]
 y_sort_enabled = true
+position = Vector2(33, 345)
 
 [node name="Dupek" parent="." instance=ExtResource("6_e5gi4")]
-position = Vector2(0, 2)
+position = Vector2(1110, -204)
 
 [node name="frog_place_to_collect2" parent="." instance=ExtResource("9_ac4pm")]
 position = Vector2(4570, -35)
