@@ -6,7 +6,7 @@ var player_in_area = false
 var ready_to_collect = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if player_in_area:
 		if Input.is_action_just_pressed("e") and ready_to_collect:
 			player.collect(item)

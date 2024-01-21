@@ -19,7 +19,7 @@ var orange_given = false
 
 var inv = preload("res://inventory/playerInv.tres")
 
-func _process(delta):
+func _process(_delta):
 	if player_in_area:
 			if Input.is_action_just_pressed("e"):
 				for slot in inv.slots:

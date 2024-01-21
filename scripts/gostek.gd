@@ -16,6 +16,7 @@ var gostek_loiter_target = null
 var gostek_new_loiter_target_timeout = 1.0
 
 var gostek_immediate_target = null
+var gostek_set_immediate_target_timeout = 0.5
 
 
 func get_hotspot_nodes():
@@ -80,8 +81,11 @@ func _process(delta):
 	else:
 		gostek_immediate_target = gostek_target_position
 
-	if gostek_immediate_target != null:
-		set_nav_target(gostek_immediate_target)
+	gostek_set_immediate_target_timeout -= delta
+	if gostek_set_immediate_target_timeout <= 0:
+		gostek_set_immediate_target_timeout = 0.5
+		if gostek_immediate_target != null:
+			set_nav_target(gostek_immediate_target)
 
 
 func _physics_process(_delta):

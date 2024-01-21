@@ -439,7 +439,7 @@ agent_radius = 0.0
 y_sort_enabled = true
 script = ExtResource("1_48m2j")
 gostek_scene = ExtResource("3_e4i8b")
-NUM_GOSTEKS = 50
+NUM_GOSTEKS = 100
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
