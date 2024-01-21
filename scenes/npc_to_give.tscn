@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://bok7rekild2um"]
 
 [ext_resource type="Script" path="res://scenes/npc_to_give.gd" id="1_gxoqd"]
-[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://Art/Characters_sprites.png" id="2_4k5uf"]
+[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://art/Characters_sprites.png" id="2_4k5uf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_em87a"]
 atlas = ExtResource("2_4k5uf")
