@@ -132,6 +132,7 @@ properties/0/spawn = true
 properties/0/replication_mode = 1
 
 [node name="NPC_to_give" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_gxoqd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

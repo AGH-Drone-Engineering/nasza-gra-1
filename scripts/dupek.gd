@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var speed = 100.0
+var enabled = true
 var player_state
 @onready var attack_area: Area2D = $AttactArea
 @onready var particles: CPUParticles2D = $CPUParticles2D
@@ -9,9 +10,13 @@ var player_state
 @onready var player_node: Node2D = get_tree().get_nodes_in_group("player")[0]
 var misses_left = 5
 
+func lock_controls():
+	enabled = false
+
 @rpc("any_peer", "call_remote", "reliable")
 func rpc_show_lose():
 	lose_sprite.visible = true
+	lock_controls()
 
 func we_are_dupek():
 	return multiplayer.has_multiplayer_peer() and not multiplayer.is_server()
@@ -27,12 +32,14 @@ func _input(event):
 				particles.emitting = true
 				win_sprite.visible = true
 				player_node.rpc_show_lose.rpc()
+				lock_controls()
 				return
 		print("Missed player")
 		if misses_left == 0:
 			print("Dupek lost")
 			lose_sprite.visible = true
 			player_node.rpc_show_win.rpc()
+			lock_controls()
 		else:
 			misses_left -= 1
 
@@ -48,10 +55,13 @@ func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 	var run = Input.is_action_pressed("sprint")
 
-	if run:
-		speed = 150
+	if not enabled:
+		speed = 0
 	else:
-		speed = 100
+		if run:
+			speed = 150
+		else:
+			speed = 100
 
 	if direction.x == 0 and direction.y == 0:
 		player_state = "idle"

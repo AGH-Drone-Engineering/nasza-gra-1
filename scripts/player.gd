@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var enabled = true
 var speed = 100
 var player_state
 
@@ -16,6 +17,22 @@ var purple_pot = false
 var orange_pot = false 
 
 
+func lock_controls():
+	enabled = false
+
+
+@rpc("any_peer", "call_remote", "reliable")
+func rpc_show_lose():
+	lose_sprite.visible = true
+	lock_controls()
+
+
+@rpc("any_peer", "call_remote", "reliable")
+func rpc_show_win():
+	win_sprite.visible = true
+	lock_controls()
+
+
 func we_are_player():
 	return not multiplayer.has_multiplayer_peer() or multiplayer.is_server()
 
@@ -27,10 +44,13 @@ func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 	var run = Input.is_action_pressed("sprint")
 
-	if run:
-		speed = 150
+	if not enabled:
+		speed = 0
 	else:
-		speed = 100
+		if run:
+			speed = 150
+		else:
+			speed = 100
 
 	if direction.x == 0 and direction.y == 0:
 		player_state = "idle"
@@ -95,10 +115,3 @@ func _on_become_dupek_pressed():
 
 func _on_start_server_pressed():
 	emit_signal("start_server_pressed")
-
-
-func _on_dupek_dupek_game_over(result):
-	if result == "win":
-		win_sprite.visible = true
-	else:
-		lose_sprite.visible = true

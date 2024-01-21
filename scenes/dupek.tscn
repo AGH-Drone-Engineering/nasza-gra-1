@@ -20,6 +20,7 @@ properties/1/replication_mode = 1
 radius = 25.0
 
 [node name="Dupek" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_wt5fe")
 
 [node name="Camera2D" type="Camera2D" parent="."]

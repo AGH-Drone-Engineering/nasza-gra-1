@@ -136,6 +136,7 @@ animations = [{
 }]
 
 [node name="Gostek" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_1tnek")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
