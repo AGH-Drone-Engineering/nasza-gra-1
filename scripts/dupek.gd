@@ -74,7 +74,37 @@ func _physics_process(_delta):
 	else:
 		velocity = direction * speed
 
+	play_anim(direction)
 	move_and_slide()
+
+
+func play_anim(dir):
+	if player_state == "idle":
+		$AnimatedSprite2D.play("idle")
+	if player_state == "walking":
+		if dir.y == -1:
+			$AnimatedSprite2D.play("n-walk")
+		if dir.x == 1:
+			$AnimatedSprite2D.play("e-walk")
+			$AnimatedSprite2D.flip_h = false
+		if dir.y == 1:
+			$AnimatedSprite2D.play("s-walk")
+		if dir.x == -1:
+			$AnimatedSprite2D.play("e-walk")
+			$AnimatedSprite2D.flip_h = true
+
+		if dir.x > .5 and dir.y < -.5:
+			$AnimatedSprite2D.play("ne-walk")
+			$AnimatedSprite2D.flip_h = false
+		if dir.x > .5 and dir.y > .5:
+			$AnimatedSprite2D.play("se-walk")
+			$AnimatedSprite2D.flip_h = false
+		if dir.x < -.5 and dir.y < -.5:
+			$AnimatedSprite2D.play("ne-walk")
+			$AnimatedSprite2D.flip_h = true
+		if dir.x < -.5 and dir.y > .5:
+			$AnimatedSprite2D.play("se-walk")
+			$AnimatedSprite2D.flip_h = true
 
 
 func _on_world_set_dupek_authority(id):
