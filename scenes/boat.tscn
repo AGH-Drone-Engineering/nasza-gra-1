@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd3mgebhgvhcy"]
+
+[ext_resource type="Script" path="res://scripts/boat.gd" id="1_pxymr"]
+[ext_resource type="Texture2D" uid="uid://c402xjhv7564p" path="res://Subject.png" id="1_vqh7h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h3g5"]
+size = Vector2(40, 20)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_3tx23"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Boat" type="Node2D"]
+script = ExtResource("1_pxymr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.02, 0.009)
+texture = ExtResource("1_vqh7h")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_2h3g5")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_3tx23")
