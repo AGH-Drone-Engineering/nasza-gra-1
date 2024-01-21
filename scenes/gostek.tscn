@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6amem1uqqooi"]
 
 [ext_resource type="Script" path="res://scripts/Gostek.gd" id="1_1tnek"]
-[ext_resource type="Texture2D" uid="uid://c402xjhv7564p" path="res://Subject.png" id="2_gmuoj"]
+[ext_resource type="Texture2D" uid="uid://b54qavbwwd3oq" path="res://henrietta1.png" id="2_52g0t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ggq36"]
 radius = 4.0
@@ -15,9 +15,8 @@ properties/0/replication_mode = 1
 script = ExtResource("1_1tnek")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
-scale = Vector2(0.007, 0.007)
-texture = ExtResource("2_gmuoj")
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("2_52g0t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ggq36")
