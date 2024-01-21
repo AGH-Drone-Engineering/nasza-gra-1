@@ -5,7 +5,13 @@ extends Area2D
 @export var target_y: int
 
 
+func we_are_player():
+	return not multiplayer.has_multiplayer_peer() or multiplayer.is_server()
+
+
 func _input(event):
+	if not we_are_player():
+		return
 	if event.is_action_pressed("e"):
 		var bodies = get_overlapping_bodies()
 		for body in bodies:

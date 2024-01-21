@@ -14,8 +14,11 @@ var orange_pot = false
 
 var mouse_loc_from_player = null
 
+func we_are_player():
+	return not multiplayer.has_multiplayer_peer() or multiplayer.is_server()
+
 func _physics_process(_delta):
-	if multiplayer.has_multiplayer_peer() and not multiplayer.is_server():
+	if not we_are_player():
 		return
 
 	mouse_loc_from_player = get_global_mouse_position() - self.position
