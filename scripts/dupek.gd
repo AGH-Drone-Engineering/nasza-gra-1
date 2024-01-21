@@ -3,6 +3,8 @@ extends CharacterBody2D
 var speed = 100.0
 var player_state
 @onready var attack_area: Area2D = $AttactArea
+@onready var particles: CPUParticles2D = $CPUParticles2D
+@onready var player_node: Node2D = get_tree().get_nodes_in_group("player")[0]
 var misses_left = 5
 
 func we_are_dupek():
@@ -16,13 +18,18 @@ func _input(event):
 		for body in bodies:
 			if body.is_in_group("player"):
 				print("Killed player")
-				$CPUParticles2D.emitting = true
+				particles.emitting = true
 				return
 		print("Missed player")
 		if misses_left == 0:
 			print("Dupek lost")
 		else:
 			misses_left -= 1
+
+func _process(_delta):
+	var vec_to_player = player_node.position - position
+	vec_to_player = vec_to_player.normalized()
+	particles.direction = vec_to_player
 
 func _physics_process(_delta):
 	if not we_are_dupek():
