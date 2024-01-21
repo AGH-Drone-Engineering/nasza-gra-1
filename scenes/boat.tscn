@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd3mgebhgvhcy"]
+[gd_scene load_steps=5 format=3 uid="uid://cpgb7qs13ee47"]
 
 [ext_resource type="Script" path="res://scripts/boat.gd" id="1_pxymr"]
-[ext_resource type="Texture2D" uid="uid://c402xjhv7564p" path="res://Subject.png" id="1_vqh7h"]
+[ext_resource type="Texture2D" uid="uid://bm8h3rafuue8j" path="res://art/Boat.png" id="2_ersan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2h3g5"]
 size = Vector2(40, 20)
@@ -15,8 +15,9 @@ properties/0/replication_mode = 1
 script = ExtResource("1_pxymr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.02, 0.009)
-texture = ExtResource("1_vqh7h")
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(2.5, 1.25)
+texture = ExtResource("2_ersan")
 
 [node name="Area2D" type="Area2D" parent="."]
 

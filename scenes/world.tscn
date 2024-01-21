@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dfthneb1g3lto" path="res://scenes/teleport.tscn" id="9_wn88t"]
 [ext_resource type="PackedScene" uid="uid://c4uqaue37gmuf" path="res://scenes/water_collectible.tscn" id="10_6k4rs"]
 [ext_resource type="Resource" uid="uid://chj315eyqe146" path="res://inventory/items/orange_pot.tres" id="10_vwdhs"]
-[ext_resource type="PackedScene" path="res://scenes/boat.tscn" id="15_0dsjb"]
+[ext_resource type="PackedScene" uid="uid://cpgb7qs13ee47" path="res://scenes/boat.tscn" id="15_0dsjb"]
 [ext_resource type="Texture2D" uid="uid://biwtlw1ukfypy" path="res://art/raindrop.png" id="17_03q11"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_evsvy"]
@@ -524,8 +524,7 @@ layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(-2949108, 262145, 2, -327717, 2293761, 27, -458717, 2293761, 27, -458713, 327681, 29, -458708, 327681, 29, -458726, 2293761, 27, -2949101, 2293761, 27, -2949116, 327681, 29, -327710, 262145, 2, -327703, 2293761, 27, -327698, 327681, 29, -262184, 327681, 29, -1179574, 327681, 29, -196525, 327681, 29, -1179579, 2293761, 27, -196528, 2293761, 27, -458722, 327681, 29)
 
 [node name="potato_plant" parent="." instance=ExtResource("2_q80ir")]
-position = Vector2(82, -46)
-scale = Vector2(0.04, 0.04)
+position = Vector2(82, 350)
 
 [node name="HotSpot1" type="Marker2D" parent="." groups=["HotSpots"]]
 position = Vector2(-1349, 279)
@@ -823,7 +822,6 @@ color = Color(0.929412, 0.784314, 0.815686, 1)
 
 [node name="NPC_to_give" parent="." instance=ExtResource("5_oymyf")]
 position = Vector2(167, -77)
-scale = Vector2(0.3, 0.3)
 pot_to_receive = ExtResource("10_vwdhs")
 
 [node name="frog_place_to_collect4" parent="." instance=ExtResource("9_ac4pm")]
@@ -831,6 +829,12 @@ position = Vector2(-1440, -31)
 
 [node name="feather_place_to_collect4" parent="." instance=ExtResource("8_7kgnk")]
 position = Vector2(-1330, 274)
+
+[node name="potato_plant2" parent="." instance=ExtResource("2_q80ir")]
+position = Vector2(410, -289)
+
+[node name="potato_plant3" parent="." instance=ExtResource("2_q80ir")]
+position = Vector2(1325, 155)
 
 [connection signal="set_dupek_authority" from="." to="Dupek" method="_on_world_set_dupek_authority"]
 [connection signal="become_dupek_pressed" from="player" to="." method="_on_player_become_dupek_pressed"]
