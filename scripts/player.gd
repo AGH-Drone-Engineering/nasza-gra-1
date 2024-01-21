@@ -41,8 +41,7 @@ func _physics_process(_delta):
 		velocity = direction * speed
 
 	move_and_slide()
-	#play_anim(direction)
-	$AnimatedSprite2D.play("s-walk")
+	play_anim(direction)
 
 
 func play_anim(dir):
@@ -53,19 +52,23 @@ func play_anim(dir):
 			$AnimatedSprite2D.play("n-walk")
 		if dir.x == 1:
 			$AnimatedSprite2D.play("e-walk")
+			$AnimatedSprite2D.flip_h = false
 		if dir.y == 1:
 			$AnimatedSprite2D.play("s-walk")
 		if dir.x == -1:
-			$AnimatedSprite2D.play("w-walk")
+			$AnimatedSprite2D.play("e-walk")
+			$AnimatedSprite2D.flip_h = true
 
 		if dir.x > .5 and dir.y < -.5:
 			$AnimatedSprite2D.play("ne-walk")
 		if dir.x > .5 and dir.y > .5:
 			$AnimatedSprite2D.play("se-walk")
+			$AnimatedSprite2D.flip_h = false
 		if dir.x < -.5 and dir.y < -.5:
 			$AnimatedSprite2D.play("nw-walk")
 		if dir.x < -.5 and dir.y > .5:
-			$AnimatedSprite2D.play("sw-walk")
+			$AnimatedSprite2D.play("se-walk")
+			$AnimatedSprite2D.flip_h = true
 
 
 func player():
