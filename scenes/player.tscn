@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dq0q8"]
 [ext_resource type="Resource" uid="uid://cxi3blfvsw5wx" path="res://inventory/playerInv.tres" id="2_78ts6"]
-[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://Art/Characters_sprites.png" id="3_8wnus"]
+[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://art/Characters_sprites.png" id="3_8wnus"]
 [ext_resource type="PackedScene" uid="uid://ckn06so8vo663" path="res://inventory/inv_ui.tscn" id="4_k55ax"]
-[ext_resource type="PackedScene" path="res://scenes/book_ui.tscn" id="5_ee65w"]
-[ext_resource type="PackedScene" path="res://scenes/pots_ui.tscn" id="6_ib5jv"]
+[ext_resource type="PackedScene" uid="uid://cdry4umpcwxyq" path="res://scenes/book_ui.tscn" id="5_ee65w"]
+[ext_resource type="PackedScene" uid="uid://dufk3d6damxnj" path="res://scenes/pots_ui.tscn" id="6_ib5jv"]
 [ext_resource type="Texture2D" uid="uid://b54qavbwwd3oq" path="res://henrietta1.png" id="7_f4ign"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qeauw"]
@@ -169,7 +169,7 @@ offset_right = 44.0
 offset_bottom = -12.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
 
 [node name="book_ui" parent="." instance=ExtResource("5_ee65w")]
 visible = false
@@ -184,10 +184,10 @@ replication_config = SubResource("SceneReplicationConfig_6b8gs")
 [node name="MultiUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -185.0
-offset_top = -102.0
-offset_right = -145.0
-offset_bottom = -62.0
+offset_left = -143.0
+offset_top = -81.0
+offset_right = -66.0
+offset_bottom = -17.0
 
 [node name="BecomeDupek" type="Button" parent="MultiUI"]
 layout_mode = 0
@@ -204,6 +204,10 @@ text = "Start Server"
 
 [node name="pots_UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_ib5jv")]
 z_index = 6
+offset_left = 49.0
+offset_top = 27.0
+offset_right = 89.0
+offset_bottom = 67.0
 player = NodePath("..")
 
 [node name="UI" type="Control" parent="."]
