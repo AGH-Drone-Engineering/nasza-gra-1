@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://bok7rekild2um"]
 
 [ext_resource type="Script" path="res://scenes/npc_to_give.gd" id="1_gxoqd"]
-[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://art/Characters_sprites.png" id="2_4k5uf"]
+[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://Art/Characters_sprites.png" id="2_4k5uf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_em87a"]
 atlas = ExtResource("2_4k5uf")
@@ -130,6 +130,12 @@ radius = 4.0
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath("AnimatedSprite2D:animation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:flip_h")
+properties/2/spawn = true
+properties/2/replication_mode = 1
 
 [node name="NPC_to_give" type="CharacterBody2D"]
 motion_mode = 1

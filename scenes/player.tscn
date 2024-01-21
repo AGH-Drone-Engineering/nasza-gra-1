@@ -184,18 +184,30 @@ offset_top = -81.0
 offset_right = -66.0
 offset_bottom = -17.0
 
-[node name="BecomeDupek" type="Button" parent="MultiUI"]
+[node name="ColorRect" type="ColorRect" parent="MultiUI"]
+z_index = 4
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 287.0
+offset_bottom = 162.0
+color = Color(0.533333, 0.694118, 0.443137, 1)
+
+[node name="BecomeDupek" type="Button" parent="MultiUI"]
+z_index = 5
+layout_mode = 0
+offset_left = 62.0
+offset_top = 102.0
+offset_right = 225.0
+offset_bottom = 133.0
 text = "JOIN THE DARK SIDE"
 
 [node name="StartServer" type="Button" parent="MultiUI"]
+z_index = 5
 layout_mode = 0
-offset_top = 34.0
-offset_right = 100.0
-offset_bottom = 65.0
-text = "Start Server"
+offset_left = 70.0
+offset_top = 29.0
+offset_right = 217.0
+offset_bottom = 60.0
+text = "BECOME MEGUCA"
 
 [node name="pots_UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_ib5jv")]
 z_index = 6
