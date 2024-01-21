@@ -11,7 +11,7 @@ func we_are_dupek():
 func _input(event):
 	if not we_are_dupek():
 		return
-	if event.is_action_pressed("e"):
+	if event.is_action_pressed("attack"):
 		var bodies = attack_area.get_overlapping_bodies()
 		for body in bodies:
 			if body.is_in_group("player"):
@@ -28,7 +28,7 @@ func _physics_process(_delta):
 		return
 
 	var direction = Input.get_vector("left", "right", "up", "down")
-	var run = Input.is_action_pressed("shift")
+	var run = Input.is_action_pressed("sprint")
 
 	if run:
 		speed = 150

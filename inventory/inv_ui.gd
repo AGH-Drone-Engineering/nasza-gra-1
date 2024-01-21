@@ -9,10 +9,10 @@ func _ready():
 	visible = false
 	
 func _process(_delta):
-	if Input.is_action_pressed("tab"):
+	if Input.is_action_pressed("inventory"):
 		show_inv_tab(true)
 	
-	if Input.is_action_just_released("tab"):
+	if Input.is_action_just_released("inventory"):
 		show_inv_tab(false)
 
 

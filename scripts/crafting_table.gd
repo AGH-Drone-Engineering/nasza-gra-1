@@ -21,7 +21,7 @@ var inv = preload("res://inventory/playerInv.tres")
 
 func _process(_delta):
 	if player_in_area:
-			if Input.is_action_just_pressed("e"):
+			if Input.is_action_just_pressed("craft"):
 				for slot in inv.slots:
 					if slot.item != null and slot.item.name == 'potato':
 						is_potato_in_inventory = true

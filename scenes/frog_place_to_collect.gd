@@ -16,7 +16,7 @@ func _on_pickable_area_body_entered(body):
 
 func _process(_delta):
 	if player_in_area:
-		if Input.is_action_just_pressed("e") and ready_to_collect:
+		if Input.is_action_just_pressed("pick_up") and ready_to_collect:
 			player_collect()
 			visible = false
 			ready_to_collect = false

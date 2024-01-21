@@ -4,7 +4,7 @@ func _ready():
 	visible = false
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("b"):
+	if Input.is_action_just_pressed("show_book"):
 		show_book()
 
 func show_book():

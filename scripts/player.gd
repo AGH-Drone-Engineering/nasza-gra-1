@@ -22,7 +22,7 @@ func _physics_process(_delta):
 		return
 
 	var direction = Input.get_vector("left", "right", "up", "down")
-	var run = Input.is_action_pressed("shift")
+	var run = Input.is_action_pressed("sprint")
 
 	if run:
 		speed = 150
@@ -66,6 +66,11 @@ func play_anim(dir):
 			$AnimatedSprite2D.play("nw-walk")
 		if dir.x < -.5 and dir.y > .5:
 			$AnimatedSprite2D.play("sw-walk")
+
+
+func player():
+	# i have no idea why this is here but stuff doesnt work without it
+	pass
 
 
 func collect(item):
