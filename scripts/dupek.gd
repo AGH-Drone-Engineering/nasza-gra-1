@@ -16,6 +16,7 @@ func _input(event):
 		for body in bodies:
 			if body.is_in_group("player"):
 				print("Killed player")
+				$CPUParticles2D.emitting = true
 				return
 		print("Missed player")
 		if misses_left == 0:
