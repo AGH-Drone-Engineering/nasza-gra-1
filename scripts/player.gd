@@ -61,11 +61,13 @@ func play_anim(dir):
 
 		if dir.x > .5 and dir.y < -.5:
 			$AnimatedSprite2D.play("ne-walk")
+			$AnimatedSprite2D.flip_h = false
 		if dir.x > .5 and dir.y > .5:
 			$AnimatedSprite2D.play("se-walk")
 			$AnimatedSprite2D.flip_h = false
 		if dir.x < -.5 and dir.y < -.5:
-			$AnimatedSprite2D.play("nw-walk")
+			$AnimatedSprite2D.play("ne-walk")
+			$AnimatedSprite2D.flip_h = true
 		if dir.x < -.5 and dir.y > .5:
 			$AnimatedSprite2D.play("se-walk")
 			$AnimatedSprite2D.flip_h = true
