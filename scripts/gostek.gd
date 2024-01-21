@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var movement_speed: float = 150.0
+var movement_speed: float = 100.0
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -43,7 +43,7 @@ func set_nav_target(target: Vector2):
 
 
 func _ready():
-	movement_speed += randf_range(-50.0, 50.0)
+	movement_speed += randf_range(-20.0, 20.0)
 	gostek_new_target_timeout += randf_range(-5.0, 5.0)
 	gostek_new_loiter_center_timeout += randf_range(-2.0, 2.0)
 	gostek_new_loiter_target_timeout += randf_range(-0.5, 0.5)

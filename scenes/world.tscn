@@ -444,7 +444,6 @@ NUM_GOSTEKS = 100
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_juh7n")
-navigation_visibility_mode = 1
 format = 2
 layer_0/name = "Ground"
 layer_0/z_index = -1

@@ -54,6 +54,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xr5js")
 
 [node name="inv_UI" parent="." instance=ExtResource("4_k55ax")]
+z_index = 5
 offset_left = -43.0
 offset_top = -55.0
 offset_right = 44.0
@@ -94,6 +95,7 @@ offset_bottom = 65.0
 text = "Start Server"
 
 [node name="pots_UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_ib5jv")]
+z_index = 6
 player = NodePath("..")
 
 [connection signal="pressed" from="MultiUI/BecomeDupek" to="." method="_on_become_dupek_pressed"]
