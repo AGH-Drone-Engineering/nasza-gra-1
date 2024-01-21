@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 @export var pot_to_receive: InvItem
 
@@ -7,12 +7,65 @@ var player = null
 
 var inv = preload("res://inventory/playerInv.tres")
 
-func _process(_delta):
+var movement_speed: float = 100.0
+@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
+var nav_applied_velocity: Vector2 = Vector2.ZERO
+
+@onready var nav_loiter_center = position
+
+var nav_loiter_target = null
+var nav_new_loiter_target_timeout = 1.0
+
+
+func we_are_player():
+	return not multiplayer.has_multiplayer_peer() or multiplayer.is_server()
+
+
+func _process(delta):
 	if player_in_area:
-			if Input.is_action_just_pressed("give"):
-				for slot in inv.slots:
-					if slot.item != null and slot.item.name == pot_to_receive.name:
-						recieve()
+		if Input.is_action_just_pressed("give"):
+			for slot in inv.slots:
+				if slot.item != null and slot.item.name == pot_to_receive.name:
+					recieve()
+
+	if we_are_player():
+		nav_new_loiter_target_timeout -= delta
+		if nav_new_loiter_target_timeout <= 0:
+			nav_new_loiter_target_timeout = 1 + randf_range(-0.5, 0.5)
+			var loiter_offset = Vector2(randf() * 100.0 - 50.0, randf() * 100.0 - 50.0)
+			var nav_immediate_target = nav_loiter_center + loiter_offset
+			set_nav_target(nav_immediate_target)
+
+
+func _physics_process(_delta):
+	if we_are_player():
+		if nav_agent.is_navigation_finished():
+			pass
+		else:
+			var current_agent_position = global_position
+			var next_path_position = nav_agent.get_next_path_position()
+			var new_velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+			nav_agent.velocity = new_velocity
+	
+		velocity = nav_applied_velocity
+	
+		# if velocity.x == 0 and velocity.y == 0:
+		# 	player_state = "idle"
+		# else:
+		# 	player_state = "walking"
+	
+		# play_anim(velocity)
+	
+		move_and_slide()
+
+
+func _on_navigation_agent_2d_velocity_computed(safe_velocity):
+	nav_applied_velocity = safe_velocity
+
+
+func set_nav_target(target: Vector2):
+	nav_agent.target_position = target
+
 
 func recieve():
 	player.delete(pot_to_receive.name)
