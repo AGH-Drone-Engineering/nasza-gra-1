@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://ca8jd0yql6ucc"]
 
 [ext_resource type="Script" path="res://scripts/dupek.gd" id="1_wt5fe"]
-[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://Art/Characters_sprites.png" id="2_q04rl"]
-[ext_resource type="Texture2D" uid="uid://u0xrc0mthm41" path="res://Art/fire_particle.png" id="3_xdpsf"]
+[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://art/Characters_sprites.png" id="2_q04rl"]
+[ext_resource type="Texture2D" uid="uid://u0xrc0mthm41" path="res://art/fire_particle.png" id="3_xdpsf"]
 [ext_resource type="Texture2D" uid="uid://b54qavbwwd3oq" path="res://henrietta1.png" id="4_w5ocv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p76db"]
@@ -148,7 +148,7 @@ script = ExtResource("1_wt5fe")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = false
-zoom = Vector2(3, 3)
+zoom = Vector2(2.5, 2.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p76db")
