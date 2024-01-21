@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dehypd6kxqdew" path="res://art/Buildings1.png" id="2_3gvrq"]
 [ext_resource type="PackedScene" uid="uid://hcoylgghssxh" path="res://scenes/potato_plant.tscn" id="2_q80ir"]
 [ext_resource type="Texture2D" uid="uid://cqvys8ft4viaa" path="res://art/Tileset_ground.png" id="3_83rnq"]
-[ext_resource type="PackedScene" path="res://scenes/gostek.tscn" id="3_e4i8b"]
+[ext_resource type="PackedScene" uid="uid://bdm2so53bvqk3" path="res://scenes/gostek.tscn" id="3_e4i8b"]
 [ext_resource type="PackedScene" uid="uid://ctlf1dh5axxft" path="res://scenes/crafting_table.tscn" id="4_60aq6"]
 [ext_resource type="Texture2D" uid="uid://bryq5vrwdurv7" path="res://art/indoor_tileset.png" id="5_cqm2u"]
 [ext_resource type="PackedScene" uid="uid://bok7rekild2um" path="res://scenes/npc_to_give.tscn" id="5_oymyf"]
@@ -391,6 +391,7 @@ texture = ExtResource("3_83rnq")
 3:15/0/y_sort_origin = 7
 3:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:15/0/physics_layer_0/angular_velocity = 0.0
+3:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 4, -2, 2, 4, 2, 6, 4, 6, 6, 4, 8, -4, 8)
 1:17/size_in_atlas = Vector2i(1, 2)
 1:17/0 = 0
 1:17/0/y_sort_origin = 15
