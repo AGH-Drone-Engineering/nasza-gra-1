@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var enabled = true
-var speed = 100
+var speed = 75
 var player_state
 var boat_done = false
 
@@ -53,9 +53,9 @@ func _physics_process(_delta):
 		speed = 0
 	else:
 		if run:
-			speed = 150
+			speed = 90
 		else:
-			speed = 100
+			speed = 75
 
 	if direction.x == 0 and direction.y == 0:
 		player_state = "idle"
