@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://ca8jd0yql6ucc"]
+[gd_scene load_steps=22 format=3 uid="uid://ca8jd0yql6ucc"]
 
 [ext_resource type="Script" path="res://scripts/dupek.gd" id="1_wt5fe"]
-[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://art/Characters_sprites.png" id="2_q04rl"]
-[ext_resource type="Texture2D" uid="uid://u0xrc0mthm41" path="res://art/fire_particle.png" id="3_xdpsf"]
-[ext_resource type="Texture2D" uid="uid://b54qavbwwd3oq" path="res://henrietta1.png" id="4_w5ocv"]
+[ext_resource type="Texture2D" uid="uid://bmivlie81usar" path="res://Art/Characters_sprites.png" id="2_q04rl"]
+[ext_resource type="Texture2D" uid="uid://u0xrc0mthm41" path="res://Art/fire_particle.png" id="3_xdpsf"]
+[ext_resource type="Texture2D" uid="uid://d1k064vw6475x" path="res://Art/guard_lost.png" id="4_pnhod"]
+[ext_resource type="Texture2D" uid="uid://c3u7wl4tdq1vb" path="res://Art/guard_won.png" id="5_tynu2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p76db"]
 radius = 8.0
@@ -194,12 +195,14 @@ offset_bottom = 3.0
 
 [node name="LoseSprite" type="Sprite2D" parent="UI"]
 visible = false
-rotation = 3.14159
-scale = Vector2(0.08, 0.08)
-texture = ExtResource("4_w5ocv")
+z_index = 6
+position = Vector2(-1.49823, -42.8052)
+scale = Vector2(1.10543, 0.959549)
+texture = ExtResource("4_pnhod")
 
 [node name="WinSprite" type="Sprite2D" parent="UI"]
 visible = false
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.08, 0.08)
-texture = ExtResource("4_w5ocv")
+z_index = 6
+position = Vector2(-1, -44)
+scale = Vector2(1.11375, 0.934062)
+texture = ExtResource("5_tynu2")
