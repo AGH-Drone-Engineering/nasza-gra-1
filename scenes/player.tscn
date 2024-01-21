@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dtmxsfavh5hwg"]
+[gd_scene load_steps=27 format=3 uid="uid://dtmxsfavh5hwg"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dq0q8"]
 [ext_resource type="Resource" uid="uid://cxi3blfvsw5wx" path="res://inventory/playerInv.tres" id="2_78ts6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ckn06so8vo663" path="res://inventory/inv_ui.tscn" id="4_k55ax"]
 [ext_resource type="PackedScene" path="res://scenes/book_ui.tscn" id="5_ee65w"]
 [ext_resource type="PackedScene" path="res://scenes/pots_ui.tscn" id="6_ib5jv"]
+[ext_resource type="Texture2D" uid="uid://ce3rvjy8bxbsd" path="res://Art/dealer_won_boat.png" id="7_1h4eh"]
 [ext_resource type="Texture2D" uid="uid://cbx0n3miccowp" path="res://Art/dealer_lost.png" id="7_2crr3"]
 [ext_resource type="Texture2D" uid="uid://db536pxeihwn8" path="res://Art/dealer_won.png" id="8_e5piy"]
 [ext_resource type="AudioStream" uid="uid://dnciira16v5nm" path="res://Sounds/music_background.mp3" id="8_jtn26"]
@@ -228,6 +229,13 @@ anchors_preset = 0
 offset_top = -47.0
 offset_right = 40.0
 offset_bottom = -7.0
+
+[node name="WinSpriteBoat" type="Sprite2D" parent="UI"]
+visible = false
+z_index = 6
+position = Vector2(0.322877, 2.46965)
+scale = Vector2(0.54183, 0.454073)
+texture = ExtResource("7_1h4eh")
 
 [node name="LoseSprite" type="Sprite2D" parent="UI"]
 visible = false

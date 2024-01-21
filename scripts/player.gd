@@ -9,6 +9,7 @@ signal become_dupek_pressed
 signal start_server_pressed
 
 @onready var win_sprite: Sprite2D = $UI/WinSprite
+@onready var win_sprite_boat: Sprite2D = $UI/WinSpriteBoat
 @onready var lose_sprite: Sprite2D = $UI/LoseSprite
 
 @export var inv: Inv
@@ -30,7 +31,10 @@ func rpc_show_lose():
 
 @rpc("any_peer", "call_remote", "reliable")
 func rpc_show_win():
-	win_sprite.visible = true
+	if boat_done:
+		win_sprite_boat.visible = true
+	else:
+		win_sprite.visible = true
 	lock_controls()
 
 
