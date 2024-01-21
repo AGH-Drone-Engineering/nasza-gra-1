@@ -15,12 +15,6 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath("CPUParticles2D:emitting")
 properties/1/spawn = true
 properties/1/replication_mode = 1
-properties/2/path = NodePath("UI/WinSprite:visible")
-properties/2/spawn = true
-properties/2/replication_mode = 1
-properties/3/path = NodePath("UI/LoseSprite:visible")
-properties/3/spawn = true
-properties/3/replication_mode = 1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0cud"]
 radius = 25.0
