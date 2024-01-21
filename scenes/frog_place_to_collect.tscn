@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmifeilnxeubr"]
+
+[ext_resource type="Script" path="res://scenes/frog_place_to_collect.gd" id="1_c0fyd"]
+[ext_resource type="Texture2D" uid="uid://1081x5jj7vie" path="res://art/frog.png" id="2_h2ahd"]
+[ext_resource type="Resource" uid="uid://sw3rugf50d66" path="res://inventory/items/frog.tres" id="2_nr3f0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7fmu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h2ahd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4swr1"]
+
+[node name="frog_place_to_collect" type="StaticBody2D"]
+script = ExtResource("1_c0fyd")
+item = ExtResource("2_nr3f0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u7fmu")
+
+[node name="pickable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
+shape = SubResource("CircleShape2D_4swr1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+
+[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
+[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

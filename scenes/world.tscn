@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c1pmdgecg6hwj"]
+[gd_scene load_steps=36 format=3 uid="uid://bgt1iid2m3e8x"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_48m2j"]
 [ext_resource type="PackedScene" uid="uid://dtmxsfavh5hwg" path="res://scenes/player.tscn" id="1_tu4l0"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" path="res://scenes/gostek.tscn" id="3_e4i8b"]
 [ext_resource type="PackedScene" path="res://scenes/dupek.tscn" id="6_e5gi4"]
 [ext_resource type="PackedScene" uid="uid://jbcsp6wej2l3" path="res://scenes/feather_place_to_collect.tscn" id="8_7kgnk"]
+[ext_resource type="PackedScene" uid="uid://bmifeilnxeubr" path="res://scenes/frog_place_to_collect.tscn" id="9_ac4pm"]
+[ext_resource type="PackedScene" uid="uid://c4uqaue37gmuf" path="res://scenes/water_collectible.tscn" id="10_6k4rs"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ik5if"]
 vertices = PackedVector2Array(4, 16, -4, 16, -4, 12, 4, 12)
@@ -492,5 +494,11 @@ navigation_polygon = SubResource("NavigationPolygon_jv6h5")
 
 [node name="feather_place_to_collect" parent="." instance=ExtResource("8_7kgnk")]
 position = Vector2(-137, -70)
+
+[node name="frog_place_to_collect" parent="." instance=ExtResource("9_ac4pm")]
+position = Vector2(-772, -34)
+
+[node name="water_collectible" parent="." instance=ExtResource("10_6k4rs")]
+position = Vector2(-762, 88)
 
 [connection signal="set_dupek_authority" from="." to="Dupek" method="_on_world_set_dupek_authority"]

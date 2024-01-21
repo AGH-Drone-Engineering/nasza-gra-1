@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4uqaue37gmuf"]
+
+[ext_resource type="Script" path="res://scripts/water_collectible.gd" id="1_0da5q"]
+[ext_resource type="Resource" uid="uid://k85h7n56crgl" path="res://inventory/items/water.tres" id="2_10cb4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imedt"]
+size = Vector2(422, 258)
+
+[node name="water_collectible" type="Area2D"]
+script = ExtResource("1_0da5q")
+item = ExtResource("2_10cb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(201, 119)
+shape = SubResource("RectangleShape2D_imedt")
+debug_color = Color(0.819608, 0.32549, 0.615686, 0.682353)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
