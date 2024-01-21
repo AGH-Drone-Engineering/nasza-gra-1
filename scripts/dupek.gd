@@ -4,8 +4,12 @@ var speed = 100.0
 var player_state
 @onready var attack_area: Area2D = $AttactArea
 @onready var particles: CPUParticles2D = $CPUParticles2D
+@onready var win_sprite: Sprite2D = $UI/WinSprite
+@onready var lose_sprite: Sprite2D = $UI/LoseSprite
 @onready var player_node: Node2D = get_tree().get_nodes_in_group("player")[0]
 var misses_left = 5
+
+signal dupek_game_over(result)
 
 func we_are_dupek():
 	return multiplayer.has_multiplayer_peer() and not multiplayer.is_server()
@@ -19,10 +23,14 @@ func _input(event):
 			if body.is_in_group("player"):
 				print("Killed player")
 				particles.emitting = true
+				win_sprite.visible = true
+				emit_signal("dupek_game_over", "win")
 				return
 		print("Missed player")
 		if misses_left == 0:
 			print("Dupek lost")
+			lose_sprite.visible = true
+			emit_signal("dupek_game_over", "lose")
 		else:
 			misses_left -= 1
 

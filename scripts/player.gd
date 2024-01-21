@@ -6,6 +6,9 @@ var player_state
 signal become_dupek_pressed
 signal start_server_pressed
 
+@onready var win_sprite: Sprite2D = $UI/WinSprite
+@onready var lose_sprite: Sprite2D = $UI/LoseSprite
+
 @export var inv: Inv
 
 var green_pot = false
@@ -92,3 +95,10 @@ func _on_become_dupek_pressed():
 
 func _on_start_server_pressed():
 	emit_signal("start_server_pressed")
+
+
+func _on_dupek_dupek_game_over(result):
+	if result == "win":
+		win_sprite.visible = true
+	else:
+		lose_sprite.visible = true

@@ -520,3 +520,4 @@ position = Vector2(0, 2)
 [connection signal="set_dupek_authority" from="." to="Dupek" method="_on_world_set_dupek_authority"]
 [connection signal="become_dupek_pressed" from="player" to="." method="_on_player_become_dupek_pressed"]
 [connection signal="start_server_pressed" from="player" to="." method="_on_player_start_server_pressed"]
+[connection signal="dupek_game_over" from="Dupek" to="player" method="_on_dupek_dupek_game_over"]

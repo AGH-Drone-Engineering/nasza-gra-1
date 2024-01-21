@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca8jd0yql6ucc"]
+[gd_scene load_steps=8 format=3 uid="uid://ca8jd0yql6ucc"]
 
 [ext_resource type="Texture2D" uid="uid://c402xjhv7564p" path="res://Subject.png" id="1_3b5q7"]
 [ext_resource type="Script" path="res://scripts/dupek.gd" id="1_wt5fe"]
 [ext_resource type="Texture2D" uid="uid://u0xrc0mthm41" path="res://Art/fire_particle.png" id="3_xdpsf"]
+[ext_resource type="Texture2D" uid="uid://b54qavbwwd3oq" path="res://henrietta1.png" id="4_w5ocv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p76db"]
 radius = 8.0
@@ -14,6 +15,12 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath("CPUParticles2D:emitting")
 properties/1/spawn = true
 properties/1/replication_mode = 1
+properties/2/path = NodePath("UI/WinSprite:visible")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("UI/LoseSprite:visible")
+properties/3/spawn = true
+properties/3/replication_mode = 1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0cud"]
 radius = 25.0
@@ -59,3 +66,23 @@ linear_accel_min = 40.0
 linear_accel_max = 60.0
 scale_amount_min = 0.02
 scale_amount_max = 0.05
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -37.0
+offset_right = 41.0
+offset_bottom = 3.0
+
+[node name="LoseSprite" type="Sprite2D" parent="UI"]
+visible = false
+rotation = 3.14159
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("4_w5ocv")
+
+[node name="WinSprite" type="Sprite2D" parent="UI"]
+visible = false
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("4_w5ocv")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dtmxsfavh5hwg"]
+[gd_scene load_steps=23 format=3 uid="uid://dtmxsfavh5hwg"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dq0q8"]
 [ext_resource type="Resource" uid="uid://cxi3blfvsw5wx" path="res://inventory/playerInv.tres" id="2_78ts6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ckn06so8vo663" path="res://inventory/inv_ui.tscn" id="4_k55ax"]
 [ext_resource type="PackedScene" path="res://scenes/book_ui.tscn" id="5_ee65w"]
 [ext_resource type="PackedScene" path="res://scenes/pots_ui.tscn" id="6_ib5jv"]
+[ext_resource type="Texture2D" uid="uid://b54qavbwwd3oq" path="res://henrietta1.png" id="7_f4ign"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qeauw"]
 atlas = ExtResource("3_8wnus")
@@ -137,6 +138,12 @@ height = 16.0
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath("UI/LoseSprite:visible")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("UI/WinSprite:visible")
+properties/2/spawn = true
+properties/2/replication_mode = 1
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
@@ -198,6 +205,26 @@ text = "Start Server"
 [node name="pots_UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_ib5jv")]
 z_index = 6
 player = NodePath("..")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -47.0
+offset_right = 40.0
+offset_bottom = -7.0
+
+[node name="LoseSprite" type="Sprite2D" parent="UI"]
+visible = false
+position = Vector2(1.91512e-12, 0)
+rotation = 3.14159
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("7_f4ign")
+
+[node name="WinSprite" type="Sprite2D" parent="UI"]
+visible = false
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("7_f4ign")
 
 [connection signal="pressed" from="MultiUI/BecomeDupek" to="." method="_on_become_dupek_pressed"]
 [connection signal="pressed" from="MultiUI/StartServer" to="." method="_on_start_server_pressed"]
