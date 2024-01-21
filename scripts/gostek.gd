@@ -4,6 +4,8 @@ var movement_speed: float = 100.0
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
+var player_state
+
 var gostek_applied_velocity: Vector2 = Vector2.ZERO
 
 var gostek_target_position = null
@@ -111,7 +113,44 @@ func _physics_process(_delta):
 		nav_agent.velocity = new_velocity
 
 	velocity = gostek_applied_velocity
+
+	if velocity.x == 0 and velocity.y == 0:
+		player_state = "idle"
+	else:
+		player_state = "walking"
+
+	play_anim(velocity)
+
 	move_and_slide()
+
+
+func play_anim(dir):
+	if player_state == "idle":
+		$AnimatedSprite2D.play("idle")
+	if player_state == "walking":
+		if dir.y < -0.5:
+			$AnimatedSprite2D.play("n-walk")
+		if dir.x > 0.5:
+			$AnimatedSprite2D.play("e-walk")
+			$AnimatedSprite2D.flip_h = false
+		if dir.y > 0.5:
+			$AnimatedSprite2D.play("s-walk")
+		if dir.x < -0.5:
+			$AnimatedSprite2D.play("e-walk")
+			$AnimatedSprite2D.flip_h = true
+
+		if dir.x > .5 and dir.y < -.5:
+			$AnimatedSprite2D.play("ne-walk")
+			$AnimatedSprite2D.flip_h = false
+		if dir.x > .5 and dir.y > .5:
+			$AnimatedSprite2D.play("se-walk")
+			$AnimatedSprite2D.flip_h = false
+		if dir.x < -.5 and dir.y < -.5:
+			$AnimatedSprite2D.play("ne-walk")
+			$AnimatedSprite2D.flip_h = true
+		if dir.x < -.5 and dir.y > .5:
+			$AnimatedSprite2D.play("se-walk")
+			$AnimatedSprite2D.flip_h = true
 
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity):
