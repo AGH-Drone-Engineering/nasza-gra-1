@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bgt1iid2m3e8x"]
+[gd_scene load_steps=39 format=3 uid="uid://bgt1iid2m3e8x"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_48m2j"]
 [ext_resource type="PackedScene" uid="uid://dtmxsfavh5hwg" path="res://scenes/player.tscn" id="1_tu4l0"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dfthneb1g3lto" path="res://scenes/teleport.tscn" id="9_wn88t"]
 [ext_resource type="PackedScene" path="res://scenes/water_collectible.tscn" id="10_6k4rs"]
 [ext_resource type="Resource" path="res://inventory/items/orange_pot.tres" id="10_vwdhs"]
+[ext_resource type="PackedScene" uid="uid://bd3mgebhgvhcy" path="res://scenes/boat.tscn" id="15_0dsjb"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_evsvy"]
 source_geometry_group_name = &"navigation_polygon_source_group"
@@ -454,9 +455,6 @@ layer_1/tile_data = PackedInt32Array(-1048647, 0, 17, -1310795, 0, 17, -1441859,
 layer_2/name = "Buildings"
 layer_2/tile_data = PackedInt32Array(-2949108, 262145, 2, -393187, 327681, 29, -327717, 2293761, 27)
 
-[node name="player" parent="." instance=ExtResource("1_tu4l0")]
-y_sort_enabled = true
-
 [node name="potato_plant" parent="." instance=ExtResource("2_q80ir")]
 position = Vector2(82, -46)
 scale = Vector2(0.04, 0.04)
@@ -478,9 +476,6 @@ position = Vector2(-731, 37)
 
 [node name="HotSpot6" type="Marker2D" parent="." groups=["HotSpots"]]
 position = Vector2(1108, -124)
-
-[node name="Dupek" parent="." instance=ExtResource("6_e5gi4")]
-position = Vector2(0, 2)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-2, 0)
@@ -512,6 +507,15 @@ pot_to_receive = ExtResource("10_vwdhs")
 
 [node name="frog_place_to_collect" parent="." instance=ExtResource("9_ac4pm")]
 position = Vector2(-775, -29)
+
+[node name="Boat" parent="." instance=ExtResource("15_0dsjb")]
+position = Vector2(-348, 158)
+
+[node name="player" parent="." instance=ExtResource("1_tu4l0")]
+y_sort_enabled = true
+
+[node name="Dupek" parent="." instance=ExtResource("6_e5gi4")]
+position = Vector2(0, 2)
 
 [connection signal="set_dupek_authority" from="." to="Dupek" method="_on_world_set_dupek_authority"]
 [connection signal="become_dupek_pressed" from="player" to="." method="_on_player_become_dupek_pressed"]

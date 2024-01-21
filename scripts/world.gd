@@ -47,6 +47,7 @@ func _on_player_become_dupek_pressed():
 	print("I am client ", my_id)
 	emit_signal("set_dupek_authority", my_id)
 	$player/MultiUI.hide()
+	$player/pots_UI.hide()
 	$Dupek/Camera2D.enabled = true
 	$player/Camera2D.enabled = false
 
