@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byeeqag8oxl4e"
-path="res://.godot/imported/indicator_orange.png-468ad7450ae172cada12a15b7c72bafa.ctex"
+uid="uid://biwtlw1ukfypy"
+path="res://.godot/imported/raindrop.png-2ae2f1115863caf1c499d705c3df54ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/indicator_orange.png"
-dest_files=["res://.godot/imported/indicator_orange.png-468ad7450ae172cada12a15b7c72bafa.ctex"]
+source_file="res://Art/raindrop.png"
+dest_files=["res://.godot/imported/raindrop.png-2ae2f1115863caf1c499d705c3df54ec.ctex"]
 
 [params]
 

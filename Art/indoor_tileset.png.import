@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byeeqag8oxl4e"
-path="res://.godot/imported/indicator_orange.png-468ad7450ae172cada12a15b7c72bafa.ctex"
+uid="uid://bryq5vrwdurv7"
+path="res://.godot/imported/indoor_tileset.png-cf25c8baea78e3414801081a32b3685f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/indicator_orange.png"
-dest_files=["res://.godot/imported/indicator_orange.png-468ad7450ae172cada12a15b7c72bafa.ctex"]
+source_file="res://Art/indoor_tileset.png"
+dest_files=["res://.godot/imported/indoor_tileset.png-cf25c8baea78e3414801081a32b3685f.ctex"]
 
 [params]
 
