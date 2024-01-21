@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dtmxsfavh5hwg"]
+[gd_scene load_steps=25 format=3 uid="uid://dtmxsfavh5hwg"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dq0q8"]
 [ext_resource type="Resource" uid="uid://cxi3blfvsw5wx" path="res://inventory/playerInv.tres" id="2_78ts6"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" path="res://scenes/book_ui.tscn" id="5_ee65w"]
 [ext_resource type="PackedScene" path="res://scenes/pots_ui.tscn" id="6_ib5jv"]
 [ext_resource type="Texture2D" uid="uid://b54qavbwwd3oq" path="res://henrietta1.png" id="7_f4ign"]
+[ext_resource type="AudioStream" path="res://Sounds/music_background.mp3" id="8_jtn26"]
+[ext_resource type="AudioStream" path="res://Sounds/rain_sound.mp3" id="9_cq0jf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dx6i5"]
 atlas = ExtResource("3_8wnus")
@@ -133,10 +135,10 @@ height = 16.0
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
-properties/1/path = NodePath("AnimatedSprite2D:animation")
+properties/1/path = NodePath("UI/LoseSprite:visible")
 properties/1/spawn = true
 properties/1/replication_mode = 1
-properties/2/path = NodePath("AnimatedSprite2D:flip_h")
+properties/2/path = NodePath("UI/WinSprite:visible")
 properties/2/spawn = true
 properties/2/replication_mode = 1
 
@@ -238,6 +240,17 @@ visible = false
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("7_f4ign")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_jtn26")
+volume_db = -8.0
+autoplay = true
+max_distance = 10.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_cq0jf")
+autoplay = true
+max_distance = 10.0
 
 [connection signal="pressed" from="MultiUI/BecomeDupek" to="." method="_on_become_dupek_pressed"]
 [connection signal="pressed" from="MultiUI/StartServer" to="." method="_on_start_server_pressed"]
