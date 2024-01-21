@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/potato_plant.gd" id="1_6ogkr"]
 [ext_resource type="Resource" uid="uid://dks77qhymjrx2" path="res://inventory/items/potato.tres" id="2_i4tey"]
-[ext_resource type="Texture2D" uid="uid://datijjh40xkkw" path="res://art/totato.png" id="3_dtdpc"]
-[ext_resource type="Texture2D" uid="uid://br5pqh3ypa1il" path="res://art/pomato.png" id="4_qja24"]
+[ext_resource type="Texture2D" uid="uid://btlhas8hi7ec8" path="res://art/totato.png" id="3_dtdpc"]
+[ext_resource type="Texture2D" uid="uid://bn3t0nmatgwsf" path="res://art/pomato.png" id="4_qja24"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7wibb"]
 animations = [{

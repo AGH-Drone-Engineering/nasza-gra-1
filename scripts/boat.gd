@@ -23,6 +23,7 @@ func _process(delta):
 			if body.is_in_group("player"):
 				boat_active = true
 				player_body = body
+				player_body.boat_achieve()
 				break
 
 	if boat_active:

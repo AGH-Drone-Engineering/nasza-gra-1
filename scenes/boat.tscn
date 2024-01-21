@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpgb7qs13ee47"]
 
 [ext_resource type="Script" path="res://scripts/boat.gd" id="1_pxymr"]
-[ext_resource type="Texture2D" uid="uid://dkvrgjxxrasc7" path="res://art/Boat.png" id="2_ersan"]
+[ext_resource type="Texture2D" uid="uid://cx6rx8ggnehty" path="res://art/Boat.png" id="2_ersan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2h3g5"]
 size = Vector2(40, 20)

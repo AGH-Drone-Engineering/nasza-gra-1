@@ -3,6 +3,7 @@ extends CharacterBody2D
 var enabled = true
 var speed = 100
 var player_state
+var boat_done = false
 
 signal become_dupek_pressed
 signal start_server_pressed
@@ -115,3 +116,7 @@ func _on_become_dupek_pressed():
 
 func _on_start_server_pressed():
 	emit_signal("start_server_pressed")
+	
+func boat_achieve():
+	boat_done = true
+	print('lodka')
